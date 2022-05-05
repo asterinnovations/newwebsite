@@ -1,0 +1,158 @@
+{% extends 'website1/index.html' %}
+{% load static %}
+
+{% block header %}
+<nav id="header" class="container-fluid navbar navbar-expand-lg">
+  <div class="container">
+    <a class=" logo p-0" href="/">
+      <img  src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"/>
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/">Home</a>
+        </li>
+
+      
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'team' %}">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'contacts' %}">Contact Us</a>
+        </li>
+ 
+    </div>
+  </div>
+</nav>
+
+{% endblock %}
+  {% block content %}
+  <br>
+  <br>
+  <br>
+  {% if messages %}
+  {% for message in messages %}
+ 
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+<br>
+<br>
+<div class="container">
+  <div class="row justify-content-md-center">
+
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button><br><br>
+  
+  <p>{{message}}</p>
+  
+</div>
+  </div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+    <!-- ======Services Section Start  -->
+<main id="main" class="overflow-hidden">
+  
+    <section id="" class="services-section1 section1bg d-flex align-items-center ">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-center" >
+              
+              <h1 data-aos="fade-up">Your Next Technology Partner </h1>
+              <h2 data-aos="fade-up">Aster Innovations</h2>
+              <p data-aos="fade-up" data-aos-delay="100">
+                Aster Innovations being the professional software R&D entity, our digital solutions are designed, developed, implemented, and supported with the latest updates to meet the prevailing version of the Operating System of your desktop,computers and mobile phone.                      <br><br>
+
+                Therefore, we have range of IT and Professional Services Management (ITSM), Cloud Services and Administration, Outsourcing of Software Teams, and undertaking of Software Outsourcing Tasks, as well as 3rd Party Software QA Testing of our clients and all Independent Software Vendors (ISV).
+                <br><br>
+                Software Startups and ISVs who requires professional Management Team Members for their important projects to be supervised, advised and managed may also contact us with confident for Technical Support and Leadership contracts.Aster Global Team is always ready to help our fellow ISVs to successfully and professionally kick-off and conclude their undertaken projects on time as expected with better profits and stakeholder satisfaction.
+               </p>
+
+            </div>
+            <div class="col-lg-5  order-1 order-lg-2 service-img ">
+              <img src="{% static 'assets/img/service-img.svg' %}" class="img-fluid mt-5" alt="" data-aos="zoom-in">
+            </div>
+          </div>
+        </div>
+    
+      </section>
+
+
+      <section class="">
+        
+          <div class="container services-list">
+               <div class="row d-flex justify-content-center align-content-center  team-heading "data-aos="fade-up" data-aos-delay="100">
+          <p data-aos="fade-up" data-aos-delay="100">Our Services</p> 
+          <h2 class=""data-aos="fade-up" data-aos-delay="100">Let's Check  Our <span>Services</span>
+          </h2>
+      </div>
+              <div class="row justify-content-around services mt-lg-5 mb-lg-4 mt-md-4 ">
+
+
+                <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box">
+                    <div class="service-icon "><img  src="{% static 'assets/img/SVG/web.svg' %}" alt=""></div>
+                    <h4 class="title"><a href="">Web Application Development</a></h4>
+                  </div>
+              </div>
+
+                <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box">
+                    <div class="service-icon px-2"><img src="{% static 'assets/img/SVG/mobile.svg' %}" alt=""></div>
+                    <h4 class="title"><a href="">Mobile Application Development</a></h4>
+                  </div>
+                  </div>
+
+
+                  <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box">
+                      <div class="service-icon "><img src="{% static 'assets/img/SVG/qa.svg' %}" alt=""></i></div>
+                      <h4 class="title"><a href="">Software Quality Assurance & Testing</a></h4>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="row justify-content-around services mt-lg-5 mb-lg-5">
+
+                <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box">
+                    <div class="service-icon "><img  src="{% static 'assets/img/SVG/pm.svg' %}" alt=""></div>
+                    <h4 class="title"><a href="">Project Management & Artifacts Design(PM)</a></h4>
+                  </div>
+                </div>
+
+                <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box" style="width: 100%;">
+                    <div class="service-icon "><img  src="{% static 'assets/img/SVG/cloud.svg' %}" alt=""></i></div>
+                    <h4 class="title"><a href="">Cloud & IT Services </a></h4>
+                  </div>
+                </div>
+
+                <div class=" col-md-6 col-lg-3 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box">
+                    <div class="service-icon "><img  src="{% static 'assets/img/SVG/buisness.svg' %}" alt=""></div>
+                    <h4 class="title"><a href="">Business Process Re-Enginerring Consultancy</a></h4>
+                  </div>
+                  </div>
+
+              </div>
+          </div>
+      </section>
+</main>
+
+
+{% endblock %}
+
+ 

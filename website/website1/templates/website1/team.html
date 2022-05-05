@@ -1,0 +1,740 @@
+{% extends 'website1/index.html' %}
+{% load static %}
+
+{% block header %}
+<nav id="header" class="container-fluid navbar navbar-expand-lg">
+  <div class="container">
+    <a class=" logo p-0" href="/">
+      <img  src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"/>
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/">Home</a>
+        </li>
+
+      
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'team' %}">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'contacts' %}">Contact Us</a>
+        </li>
+ 
+    </div>
+  </div>
+</nav>
+
+{% endblock %}
+  {% block content %}
+  <br>
+  <br>
+  <br>
+  {% if messages %}
+  {% for message in messages %}
+ 
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+<br>
+<br>
+<div class="container">
+  <div class="row justify-content-md-center">
+
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button><br><br>
+  
+  <p>{{message}}</p>
+
+  
+</div>
+  </div>
+{% endif %}
+{% endfor %}
+{% endif %}
+   
+
+    <!-- ======Team Section Start  -->
+    <section class="section mt-5">
+      <div class="container">
+        <div
+          class="row d-flex justify-content-center align-content-center mt-5 team-heading"
+          data-aos-delay="100"
+        >
+          <p>Our Team Members</p>
+          <h2 class="">
+            Three Generations Of <span> Technology &</span> Business Domain
+            <span>Specialists</span>
+          </h2>
+        </div>
+
+        <main id="main">
+          <!-- ===first team member row=== start -->
+          <section>
+            <div
+              class="d-flex justify-content-center team-title"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <p class="my-5">Aster Global Senior Management Team</p>
+            </div>
+
+            <div
+              class="container d-flex justify-content-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="row">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/smita.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Smita</h3>
+                      <span class="mt-1 clearfix">Chairman</span>
+                      <span class="mt-1 clearfix">CEO/CMO</span><br /><small
+                        class="mt-4"
+                        >BA, MA</small
+                      >
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/smita-k-c-81227573/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/vijitha.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Vijitha</h3>
+                      <span class="clearfix"
+                        >International Consultant /Global Chief Operations
+                        Officer</span
+                      >
+                      <br />
+                      <small class="mt-4"
+                        >B.Sc, M.Sc, mPMI (USA), IEEE (USA)</small
+                      >
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/vijitha-fernando-srilanka/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/bijay1.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Bijay</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant /Chief Marketing Officer</span
+                      >
+                      <br />
+                      <small class="mt-4">mPMI (USA)</small>
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/bijay-dhungel-5b3923228/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/basanta.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Basanta</h3>
+                      <span class="clearfix"
+                        >Director - Administration & eGovernment</span
+                      >
+                      <br />
+                      <br /><small class="mt-4">BA, MA</small>
+                      <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/bikash.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Dr. Bikash</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant / Managing Director
+                        (Australia)</span
+                      >
+                      <br />
+                      <small class="mt-4">MBBS, MHSM, RN</small>
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/bikashdhungel"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/anish.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Anish</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant / Chief Technology Officer
+                        (USA)</span
+                      >
+                      <br />
+                      <small class="mt-4"><br /></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/ronald.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Ronald</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant / Chief Technology Officer
+                        (Sri Lanka)</span
+                      >
+                      <span class="mt-1 clearfix">CEO/CMO</span
+                      ><small class="mt-4">mPMI (USA), H.Dip, AIX, J2EE </small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/tahiru1.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Tahiru</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant / Managing Director (Africa
+                        Region)</span
+                      >
+                      <br />
+                      <br /><small class="mt-4"></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ====first team member row end ===  -->
+
+          <!-- ====second team member row start ===  -->
+          <section class="">
+            <div
+              class="d-flex justify-content-center team-title"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <p class="mb-5">International / National Senior Consultant</p>
+            </div>
+
+            <div
+              class="container d-flex justify-content-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="row">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/vijitha.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Vijitha</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant /Global Chief Operations
+                        Officer</span
+                      >
+                      <br />
+                      <small class="mt-4"
+                        >B.Sc, M.Sc, mPMI (USA), IEEE (USA)</small
+                      >
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/vijitha-fernando-srilanka/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/bijay1.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Bijay</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant /Chief Marketing Officer</span
+                      >
+                      <br />
+                      <small class="mt-4">mPMI (USA)</small>
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/bijay-dhungel-5b3923228/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/anish.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Anish</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant / Chief Technology Officer
+                        (USA)</span
+                      >
+                      <br />
+                      <small class="mt-4"><br /></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/ravi.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Ravi</h3>
+                      <span class="mt-1 clearfix"
+                        >Technical & Training Consultant (Nepal)</span
+                      >
+                      <span class="mt-1 clearfix">CEO/CMO</span><br /><small
+                        class="mt-4"
+                        >B.sc.</small
+                      >
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/ravi-sah-455a11122/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i></button
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/tahiru1.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Tahiru</h3>
+                      <span class="mt-1 clearfix"
+                        >International Consultant / Managing Director (Africa
+                        Region)</span
+                      >
+                      <br /><br />
+                      <small class="mt-4"></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ====second team member row start ===  -->
+
+          <!-- ====third team member row start ===  -->
+          <section>
+            <div
+              class="container d-flex justify-content-between"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="row">
+                <div
+                  class="d-flex justify-content-center team-title"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <p class="mb-5">Our Global Team</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/charitha.jpg' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Charitha</h3>
+                      <span class="mt-1 clearfix"
+                        >General Manager <br />
+                        Customer Accounts & Relations</span
+                      >
+                      <br />
+                      <small class="mt-4"
+                        >Dip. (SL), H.Dip. (SL), B.Sc, (USA)</small
+                      >
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/jude.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Jude</h3>
+                      <span class="mt-1 clearfix"
+                        >General Manager <br />Customer Accounts &
+                        Relations</span
+                      >
+                      <br />
+                      <small class="mt-4">mPMI (USA)</small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/kshitiz.PNG' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Kshitiz</h3>
+
+                      <span class="mt-1 clearfix">Team Lead </span> Software
+                      Solutions & Design Architect <br />
+                      <br /><small class="mt-4"
+                        >B.E in Computer Science (TU) (P)</small
+                      >
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/kshitiz-karmacharya/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 col-lg-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/senodhi.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Senodhi</h3>
+                      <span class="mt-1 clearfix">Senior Content Writer </span>
+                      <br />
+                      <small class="mt-4">B.A (UK)<br /></small>
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/senodhi-fernando-a2b59a213/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 col-lg-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/rohan.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Rohan</h3>
+                      <span class="mt-1 clearfix">.NET Developer </span> <br />
+                      <small class="mt-4">B.E. Computer<br /></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 col-lg-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/binish.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Binish</h3>
+                      <span class="mt-1 clearfix">Business Analyst </span>
+                      <br />
+                      <small class="mt-4">B.Sc (P)<br /></small>
+                      <div class="social-buttons mt-4">
+                        <a
+                          href="https://www.linkedin.com/in/binish-bhattarai/"
+                          target="_blank"
+                        >
+                          <button class="neo-button">
+                            <i class="fa fa-linkedin fa-1x"></i>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 col-lg-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/niraj.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Niraj</h3>
+                      <span class="mt-1 clearfix">Front-End Developer </span>
+                      <br />
+                      <small class="mt-4"><br /></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 col-lg-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/sabin.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Sabin</h3>
+                      <span class="mt-1 clearfix"
+                        >Software Developer & Analyst
+                      </span>
+                      <br />
+                      <small class="mt-4">B.E. Software (P)<br /></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 col-lg-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/alisha.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Alisha</h3>
+                      <span class="mt-1 clearfix"
+                        >Accounts Officer / ERP Software Analyst
+                      </span>
+                      <br />
+                      <small class="mt-4">B.BS, CA-IPCC (P)<br /></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 col-lg-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="card p-3 py-4 mt-5 mb-5">
+                    <div class="text-center team-name">
+                      <img
+                        src="{% static 'assets/img/team/sachin.png' %}"
+                        width="100"
+                        class="rounded-circle"
+                      />
+                      <h3 class="mt-4">Sachin</h3>
+                      <span class="mt-1 clearfix">UI/UX Engineer </span> <br />
+                      <small class="mt-4">B.sc. CSIT<br /></small>
+                      <!-- <div class="social-buttons mt-4">
+                        <button class="neo-button">
+                          <i class="fa fa-linkedin fa-1x"></i>
+                        </button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ====third team member row start ===  -->
+        </main>
+      </div>
+    </section>
+
+    <!-- ======team Section End  -->
+
+   {% endblock %}

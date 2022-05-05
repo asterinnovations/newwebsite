@@ -1,0 +1,182 @@
+{% extends 'website1/index.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+{% if messages %}
+{% for message in messages %}
+
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+<br>
+<br>
+<div class="container">
+<div class="row justify-content-md-center">
+
+
+<div class="alert alert-success" role="alert">
+  <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button><br><br>
+
+<p>{{message}}</p>
+
+</div>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+    <section id="" class="about privacy d-flex align-items-center mt-5 mb-5">
+      <div class="container">
+        <div class="col-lg-12   mt-5" id ="text-content">
+            <br>
+            <br>
+       <h6><a id="first">Terms & Conditions</a></h6>
+<p>Our Terms of services were posted on 12 August, 2017 and last updated on 21 December, 2021.<br>
+Please read these terms and conditions carefully before using Our Service.</p>
+  
+    <h6><a id="first">Definitions</a></h6>
+<p>These are the definitions for Aster Innovations Pvt. Ltd for the purposes of these Terms and Conditions:</p>
+    <ul>
+<li>Affiliate means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority</li>
+<li>Account means a unique account created for You to access our Service or parts of our Service.</li>
+<li>Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Aster Innovations Pvt. Ltd.</li>
+<li>Content refers to content such as text, images, web design, program, mobile app, or other information that can be posted, uploaded, linked to or otherwise made available by third party (You) to Us, regardless of the form of that content.</li>
+<li>Device means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
+        <li>Feedback means feedback, innovations or suggestions sent by You regarding the attributes, performance or features of our Service.</li>
+        <li>Products refer to the products or items offered for sale on the Service by the Company.</li>
+        <li>Orders mean a request by You to purchase Products from Us.</li>
+        <li>Promotions refer to contests, sweepstakes or other promotions offered through the Service by the Company.</li>
+        <li>Service refers to the Company Website.</li>
+        <li>Terms and Conditions (also referred as "Terms" or "Terms of Use" or “Terms of Services”) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.</li>
+        <li>Third-party Social Media Service means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service to the Company on their social media services.</li>
+        <li>You mean the individual accessing or using the Service for Aster Innovations, or the company, or other legal entity on behalf of which such individual is accessing or using the Service of Aster Innovations Pvt. Ltd, as applicable.</li>
+
+
+</ul>
+
+    <h6><a id="2"> Acknowledgment</a></h6>
+<p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You (third Party) and the Company (Aster Innovations Pvt. Ltd). These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users, government office, third party company, and others who access or use the Service.
+By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions, then You may not access the Service.
+Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
+
+    <h6><a id="3"> Legal Advice Disclaimer for Our Products</a></h6>
+<p>You understand that we do not offer legal contracts, policies or agreements ("Products"), as created and/or verified by attorneys or paralegals for sale through our Service.
+You understand that it is your responsibility to ensure that the privacy policy or any other policies you create with us is complete, accurate, and meets your company’s specific privacy needs.
+The Company is not liable or responsible for any privacy policies or any other policies created using our services, and we give no representations or warranties, express or implied, that the privacy policies or any other policies created using our service are complete, accurate or free from errors or omissions.
+Placing Orders for Products
+By placing an Order for Products through the Company, you authorize that You are legally capable of entering into binding contracts. You are responsible for all the costs of the development of the requested products through the company and any breach of contracts of the development You are solely responsible for all the legal and other expenses done by the company and has to be paid in full.</p>
+
+
+
+
+<h6><a id="4">Your Information</a> </h6>
+<p>If You wish to place an Order for Products available on the Service by the Company, You may be asked to supply certain information relevant to Your Order including, without limitation, Your name, Your email, Your phone number. You represent and warrant that: (i) You have the legal right to use any credit or debit card(s) or other payment method(s) in connection with any Order; and that (ii) the information You supply to us is true, correct and complete. If not correct then the company can take legal action against You
+By submitting such information, You grant us the right to provide the information to payment processing third parties for purposes of facilitating the completion of Your Order.</p>
+
+    <h6><a id="5">Order Cancellation</a></h6>
+<p>We reserve the right to refuse or cancel Your Order at any time for certain reasons including but not limited to:
+Errors in Your Order once the development process for the product has started.
+You breaching the Company Contracts and Privacy Information’s
+Delay of Payments to the Company
+We reserve the right to refuse or cancel Your Order if fraud or an unauthorized or illegal transaction is suspected.</p>
+
+    <h6><a id="6">Your Order Cancellation / Refund Rights</a></h6>
+    <p>Any Products you purchase can only be returned or refunded in accordance with these Terms and Conditions breached by the Company itself.</p>
+
+    <h6><a id="7">Prices Policy</a></h6>
+<p>The Company reserves the right to revise its prices at any time prior to accepting an Order or before signing the Memorandum of Understanding (MOU).</p>
+<p>The prices quoted may be revised by the Company subsequent to accepting an Order in the event of any occurrence affecting delivery caused by government action, customer (Your) change request and modification to the products.</p>
+
+
+
+<h6><a id="8">Payments</a></h6>
+<p>Payment can be made through various payment methods we have available within the country or region where customer has selected to purchase the products, such as Visa, MasterCard, American Express cards or online payment methods.
+Payment cards (credit cards or debit cards) are subject to validation checks and authorization by Your card issuer. If we do not receive the required authorization, We will not be liable for any delay or non-delivery of Your Order.</p>
+
+    <h6><a id="9">Promotions</a></h6>
+<p>Any Promotions made available through the Service by the Company may have different sets from these Terms and Conditions.
+If You participate in any Promotions, please review the applicable rules as well as our Privacy policy.</p>
+
+    <h6><a id="10">User Accounts</a></h6>
+<p>When You create an account with Us, You must provide Us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of Your account on Our Service.
+You are responsible for safeguarding the password that You use to access the Service and for any activities or actions under Your password, whether Your password is with Our Service or a Third-Party Social Media Service.
+You agree not to disclose Your password to any third party. You must notify Us immediately upon becoming aware of any breach of security or unauthorized use of Your account.
+You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than You without appropriate authorization, or a name that is otherwise offensive, vulgar or obscene.</p>
+
+
+
+
+
+<h6><a id="11">Content</a></h6>
+<h6>Your Right to Post Content</h6>
+<p>Our Service allows You to post Content. You are responsible for the Content that You post to the Service, including its legality, reliability, and appropriateness.
+By posting Content to the Service, You grant Us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through the Service. You retain any and all of Your rights to any Content You submit, post or display on or through the Service and You are responsible for protecting those rights. You agree that this license includes the right for Us to make Your Content available to the Company for their advertisement purpose and there are no breach of contract done by the company.
+    You represent and warrant that: (i) the Content is Yours (You own it) or You have the right to use it and grant Us the rights and license as provided in these Terms, and (ii) the posting of Your Content on or through the Service does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person, or any other industries.</p>
+
+    <h6><a id="12">Content Restrictions</a></h6>
+<p>The Company is not responsible for the content of any products that has finished the development and the contracts / agreement is over. You expressly understand and agree that You are solely responsible for the Content and for all activity that occurs under your account, whether done so by You or any third person using Your account.
+You may not transmit any Content that is unlawful, offensive, upsetting, intended to disgust, threatening, libelous, defamatory, obscene or otherwise objectionable.
+Discriminatory, or mean-spirited content, including references or commentary about religion, race, sexual orientation, gender, national/ethnic origin, or other targeted groups.
+Containing or installing any viruses, worms, malware, trojan horses, or other content that is designed or intended to disrupt, damage, or limit the functioning of any software, hardware or telecommunications equipment or to damage or obtain unauthorized access to any data or other information of a third person.
+Infringing on any proprietary rights of any party, including patent, trademark, trade secret, copyright, right of publicity or other rights.
+Impersonating any person or entity including the Company and its employees or representatives.
+Violating the privacy of any third person.
+    False information and features.</p>
+
+
+<h6><a id="13">Content Backups</a></h6>
+<p>Although regular backups of Content are performed, the Company do not guarantee there will be no loss or corruption of data.
+The Company will provide support and attempt to troubleshoot any known or discovered issues that may affect the backups of Content. But You acknowledge that the Company has no liability related to the integrity of Content or the failure to successfully restore Content to a usable state.
+You agree to maintain a complete and accurate copy of any Content in a location independent of the Service.
+You agree to pay all the cost to the company while content backups need to be done while, during or after the development contracts are over.</p>
+
+
+    <h6><a id="14">Copyright Policy</a></h6>
+<h6>Intellectual Property Infringement (Violations)</h6>
+<p>We respect the intellectual property rights of others. It is Our policy to respond to any claim that Content posted on the Service infringes a copyright or other intellectual property infringement of any person.
+If You are a copyright owner, or authorized on behalf of one, and You believe that the copyrighted work has been copied in a way that constitutes copyright infringement that is taking place through the Service, You must submit Your notice in writing to the attention of our copyright agent via email and include in Your notice a detailed description of the alleged infringement.
+You may be held accountable for damages (including costs and attorneys' fees) for misrepresenting that any Content is infringing Your copyright. You can follow the guidelines:
+An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright's interest.
+A description of the copyrighted work that You claim has been infringed, including the of the location where the copyrighted work exists or a copy of the copyrighted work.
+Identification of the URL or other specific location on the Service where the material that You claim is infringing is located.
+Your address, telephone number, personal information, and email address.
+A statement by You, made under penalty of perjury, that the above information in Your notice is accurate and that You are the copyright owner or authorized to act on the copyright owner's behalf.</p>
+
+
+<h6><a id="15">Intellectual Property</a></h6>
+    <p>
+The Service and its original content (excluding Content provided by You or other users), features and functionality are and will remain the exclusive property of the Company.
+Our trademarks may not be used in connection with any product or service without the prior written consent of the Company.</p>
+
+    <h6><a id="21">Your Feedback to Us</a></h6>
+<p>You can provide Feedback to the Company by sending us an email, telephone calls, or any other methods that is applicable to you</p>
+
+    <h6><a id="16">Termination</a></h6>
+<p>We may terminate or suspend Your Account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
+Upon termination, Your right to use the Service will cease immediately.</p>
+
+<h6><a id="17">Disputes Resolution</a></h6>
+<p>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
+
+    <h6><a id="18">Translation Interpretation</a></h6>
+<p>These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.</p>
+<h6><a id="19">Changes to These Terms and Conditions</a></h6>
+<p>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material, We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
+By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service provide by the Company.</p>
+<h6><a id="20">Contact Us</a></h6>
+<p>If you have any questions about these Terms and Conditions, You can contact us:
+By visiting this page on our website: https://www.asterinnovations.com/contact/</p>
+
+
+  </div>
+  </div>
+
+
+
+
+        </div>
+      </div>
+    </section>
+
+   {% endblock %}

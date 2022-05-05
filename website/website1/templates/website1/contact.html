@@ -1,0 +1,238 @@
+
+{% extends 'website1/index.html' %}
+{% load static %}
+{% block header %}
+<nav id="header" class="container-fluid navbar navbar-expand-lg">
+  <div class="container">
+    <a class=" logo p-0" href="/">
+      <img  src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"/>
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/">Home</a>
+        </li>
+
+      
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'team' %}">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'contacts' %}">Contact Us</a>
+        </li>
+ 
+    </div>
+  </div>
+</nav>
+
+{% endblock %}
+
+  {% block content %}
+  <br>
+  <br>
+  <br>
+  {% if messages %}
+  {% for message in messages %}
+ 
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+<br>
+<br>
+<div class="container">
+  <div class="row justify-content-md-center">
+
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button><br><br>
+  
+  <p>{{message}}</p>
+
+</div>
+  </div>
+{% endif %}
+{% endfor %}
+{% endif %}
+   
+    <main id="main" class="mt-5">
+      <section id="contact" class="contact py-5">
+        <div class="container" data-aos="fade-up">
+          <div class="row justify-content-between">
+            <div class="row row-cols-2 p-5">
+              <div class="col-lg-6 col-sm-12 product-heading">
+                <p><span>Connect With Us</span></p>
+                <h2 class="">How Can We</h2>
+                <h2><span>Help You !</span></h2>
+              </div>
+              <div class="col-lg-6 col-sm-12 product-side-description">
+                <p>
+                  All your queries with regard to employment with us, business
+                  partnerships, Seed and Angel Investment as well as Venture
+                  Capital, Joint-venture, willing to be a local dealer in your
+                  Country/District, to buy our digital-age software, and to give
+                  suggestions, comments, constructive criticism, please use the
+                  below Contact Us form... !
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="col-lg-5 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="info">
+                <div class="address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p>Dhobighat,Lalitpur, Nepal</p>
+                </div>
+
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>info@asterinnovations.com</p>
+                </div>
+
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>(+977)9846897070</p>
+                </div>
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.322820202344!2d85.30499611548166!3d27.676415733456537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19d3284fc7bf%3A0x464d1805b70a5500!2sAster!5e0!3m2!1sen!2snp!4v1649484372863!5m2!1sen!2snp"
+                  frameborder="0"
+                  style="border: 0; width: 100%; height: 290px"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+            <!-- <div id="email_div" style="display: none;" >
+
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email">
+              <button  onclick="ajax_send_otp()">Send OTP</button>
+          </div> -->
+         <div class="info">
+          <div id="verify_text_div"></div>
+         
+          <br>
+          <div id="otp_div" style="display: none;" >
+            
+          
+            <label for="email">OTP</label>
+            <input type="text" name="otp" id="otp">
+            <button  onclick="verify_otp()">Verify</button>
+        </div>
+              <form
+              action=""
+                method="POST"
+                name="contact-form"
+                class="contact-form"
+                role="form"
+                id="email_div"
+                style="display: block;"
+                class="info"
+               
+              >
+              {% csrf_token %}
+              
+              
+                <div class="row">
+                  <div class="form-group col-md-6" >
+                    <label for="name">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6 mt-3 mt-md-0">
+                    <label for="name">Your Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="name">Subject</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <label for="name">Message</label>
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="10"
+                    required
+                  ></textarea>
+                </div>
+                <br>
+               
+                <div class="text-center">
+                  <!-- <button type="submit" name="contact-form" value="contact-form" >Send Message</button> -->
+                 
+                  <input type="submit" value="Submit Message "  name="add_object">
+                  
+
+                </div>
+
+               
+              </form>
+         </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="contact-footer-section">
+        <div class="container">
+          <div class="row d-flex align-items-center transbox mt-5">
+            <div class="col-12">
+              <p data-aos="fade-up">Have any projects in mind !</p>
+            </div>
+            <div class="col-6">
+              <b data-aos="fade-up"> Let’s Talk.</b>
+            </div>
+            <div class="col-6">
+              <button data-aos="fade-up">Book Free Consultation</button>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <!-- End Contact Us Section -->
+    </main>
+    <!-- End #main -->
+
+    
+{% endblock %}
