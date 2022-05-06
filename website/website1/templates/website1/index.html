@@ -63,12 +63,14 @@
     }
     .astertooltip .astertooltiptext {
       visibility: hidden;
-      min-width: 600px;
+      width:50%;
+      min-width: 500px;
+      
       background: rgba(255, 255, 255, 0.45);
-box-shadow: 0px 2px 15px rgba(26, 157, 232, 0.1);
-backdrop-filter: blur(9px);
--webkit-backdrop-filter: blur(9px);
-border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0px 2px 15px rgba(26, 157, 232, 0.1);
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       color: #032F60;
       border-radius: 6px;
       padding: 10px 30px;
@@ -76,7 +78,7 @@ border: 1px solid rgba(255, 255, 255, 0.18);
       position: absolute;
       z-index: 1;
       right: -500px;
-top: -60px;
+    top: -60px;
     }
     .astertooltip:hover .astertooltiptext {
       visibility: visible;
@@ -2345,7 +2347,7 @@ top: -60px;
                    
                      <div data-aos="fade-up">
                       <img
-                        src="{% static 'assets/img/cliq-logo.png' %}"
+                        src="{% static 'assets/img/cliqnew.png' %}"
                         alt="CLiQ Logo"
                         style="width: 200px"
                       />
@@ -2361,7 +2363,7 @@ top: -60px;
                       This fine digital-age Members Only Mobile app was
                       designed, developed, tested, and released within 6 months
                       for all those who look for their life long
-                      marriage-partner through our high-quality ASTERCLiQTM
+                      marriage-partner through our high-quality Aster CLiQ<sup>TM</sup>
                       dating App software.
                     </p>
 
@@ -2478,7 +2480,7 @@ top: -60px;
                 technical supports and various international projects.
               </p>
               <div>
-                <a href="about.html" class="btn-get-started" data-aos="fade-up"
+                <a href="{% url 'about' %}" class="btn-get-started" data-aos="fade-up"
                   >Read more</a
                 >
               </div>
@@ -3821,7 +3823,8 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                   </div>
                   <p class="description">2018-2019</p>
                   <h4 class="title mb-3">
-                    <a href="">Ministry of Health-LMD(Nepal)</a>
+
+                    <a href="">Ministry of Health-LMD (Nepal)</a>
                   </h4>
                   <p class="description">
                     eLMIS Electronic Logistics Mgmt.Info.Sys
@@ -3981,7 +3984,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                   </div>
                   <p class="description">2019</p>
                   <h4 class="title mb-3">
-                    <a href="">Office of the Auditor General(Nepal)</a>
+                    <a href="">Office of the Auditor General (Nepal)</a>
                   </h4>
                   <p class="description">Digital Circular Web Application</p>
                 </div>
@@ -4272,16 +4275,29 @@ with our 24x7 on-demand and onsite support services.
                     style="margin-right: 3%"
                     src="{% static 'assets/img/nepal-flag.png' %}"
                     alt=""
-                  /><a href="#"><strong>Nepal</strong>(Headquarter) </a>
-      <div class="astertooltiptext">
-      <span> <i class="bi bi-geo-alt-fill"></i>  #150/41 Thado Dhunga, Dhobighat – 3, Lalitpur – 44600, Nepal</span>
-        <span> <br>
-        <i class="bi bi-telephone-fill"></i>   (+977) 984 103 8989 | 985 121 0828 |  981 020 9398| 985 605 0777
-        </span>
-        <span>
-          <br>
-        <i class="bi bi-envelope-check-fill"></i>     nepal@asterinnovations.com
-        </span>
+                  /><a href="#"><strong>Nepal</strong> <br>(Headquarters) </a>
+    <div class="astertooltiptext">
+
+    <div class ="container">
+        <div class="row">
+            <div class="col-9" style="font-Size:10px;">
+              <ul style="list-style:none;">
+                
+                 <span><li> <i class="bi bi-geo-alt-fill"></i> #150/41 Thado Dhunga, Dhobighat – 3, Lalitpur – 44600, Nepal</span></li>
+                  <span> <li><i class="bi bi-telephone-fill"></i>   (+977) 984 103 8989 | 985 121 0828 |  981 020 9398| 985 605 0777</span></li>
+                    <span><li><i class="bi bi-envelope-check-fill"></i>     nepal@asterinnovations.com</span></li>
+              </ul>
+            </div>
+        <!-- </div>
+        </div> -->
+
+        <div class="col-3" >
+          <img width="auto" height="100" src="{% static 'assets/img/team/smitak.jpeg' %}" />
+        </div>
+
+        </div>
+        </div>
+        
       </div>
                 </li>
                 <li class="astertooltip">
@@ -4290,16 +4306,29 @@ with our 24x7 on-demand and onsite support services.
                     style="margin-right: 3%"
                     src="{% static 'assets/img/srilanka.png' %}"
                     alt=""
-                  /><a href="#"><strong>Srilanka</strong> (Global Support & Solutions Center) </a>
-      <div class="astertooltiptext">
-      <span> <i class="bi bi-geo-alt-fill"></i>Colombo</span>
-        <span> <br>
-        <i class="bi bi-telephone-fill"></i>  (+94) 77 732 9987 | 71 454 5938
-        </span>
-        <span>
-          <br>
-        <i class="bi bi-envelope-check-fill"></i>  srilanka@asterinnovations.com
-        </span>
+                  /><a href="#"><strong>Srilanka</strong> <br>(Global Support & Solutions Center) </a>
+     
+                  <div class="astertooltiptext">
+                    <div class="container">
+                      <div class="row">
+                    <div class="col-8"  style="font-Size:10px;">
+                          <span> <i class="bi bi-geo-alt-fill"></i>Colombo</span>
+                            <span> <br>
+                            <i class="bi bi-telephone-fill"></i>  (+94) 77 732 9987 |
+                            
+                            71 454 5938
+                            </span>
+                            <span>
+                              <br>
+                            <i class="bi bi-envelope-check-fill"></i>  srilanka@asterinnovations.com
+                            </span>
+                    </div>
+        <div class="col">
+          <img width="auto" height="100" src="{% static 'assets/img/team/ronald.png' %}">
+
+        </div>
+      </div>
+    </div>
       </div>
                 </li>
 
@@ -4310,8 +4339,10 @@ with our 24x7 on-demand and onsite support services.
                     style="margin-right: 3%"
                     src="{% static 'assets/img/us.png' %}"
                     alt=""
-                  /><a href="#"><strong>USA</strong>(Advanced Technology Center) </a>
+                  /><a href="#"><strong>USA</strong><br> (Advanced Technology Center) </a>
       <div class="astertooltiptext">
+        <div class="row">
+          <div class="col-8"  style="font-Size:10px;">
       <span> <i class="bi bi-geo-alt-fill"></i>California</span>
         <span> <br>
         <i class="bi bi-telephone-fill"></i>  (+1) 405 201 0741
@@ -4320,18 +4351,27 @@ with our 24x7 on-demand and onsite support services.
           <br>
         <i class="bi bi-envelope-check-fill"></i>  usa@asterinnovations.com
         </span>
+        </div>
+        <div class="col">
+          <img width="auto" height="100" src="{% static 'assets/img/team/anish.jpeg' %}">
+        </div>
+      </div>
       </div>
                 </li>
 
 
                 <li class="astertooltip">
+
                   <img
                     class=""
                     style="margin-right: 3%"
                     src="{% static 'assets/img/australia.png' %}"
                     alt=""
-                  /><a href="#"><strong>Australia</strong>(Sales & Support Center) </a>
+                  /><a href="#"><strong>Australia</strong><br>(Sales & Support Center) </a>
       <div class="astertooltiptext">
+        <div class="container">
+          <div class="row">
+            <div class="col-9"  style="font-Size:10px;">
       <span> <i class="bi bi-geo-alt-fill"></i> 36 Flowers drive, Coomera QLD 4209</span>
         <span> <br>
         <i class="bi bi-telephone-fill"></i>  (+61) 451 541 411
@@ -4340,7 +4380,14 @@ with our 24x7 on-demand and onsite support services.
           <br>
         <i class="bi bi-envelope-check-fill"></i>  australia@asterinnovations.com
         </span>
+        </div>
+        <div class="col">
+          <img width="auto" height="100" src="{% static 'assets/img/team/bikash.jpg' %}">
+        </div>
       </div>
+      </div>
+      </div>
+
                 </li>
 
 
@@ -4352,8 +4399,11 @@ with our 24x7 on-demand and onsite support services.
                     style="margin-right: 3%"
                     src="{% static 'assets/img/nigeria.png' %}"
                     alt=""
-                  /><a href="#"><strong>Africa</strong>(Sales & Support Center) </a>
+                  /><a href="#"><strong>Africa</strong> <br>(Sales & Support Center) </a>
       <div class="astertooltiptext">
+        <div class="container">
+          <div class="row">
+            <div class="col-9"  style="font-Size:10px;">
       <span> <i class="bi bi-geo-alt-fill"></i> Benin</span>
         <span> <br>
         <i class="bi bi-telephone-fill"></i>  (+61) 451 541 411
@@ -4362,6 +4412,13 @@ with our 24x7 on-demand and onsite support services.
           <br>
         <i class="bi bi-envelope-check-fill"></i> benin@asterinnovations.com
         </span>
+        </div>
+        
+        <div class="col">
+          <img width="auto" height="60" src="{% static 'assets/img/team/tahiru.png' %}">
+        </div>
+        </div>
+      </div>
       </div>
                 </li>
                 
@@ -4373,18 +4430,26 @@ with our 24x7 on-demand and onsite support services.
                     src="{% static 'assets/img/tonga.png' %}"
                     alt=""
                   /><a href="#"
-                    ><strong>Tonga </strong>(Solutions, Support & Center)
+                    ><strong>Tonga </strong><br> (Solutions, Support & Center)
                   </a>
                   <div class="astertooltiptext">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-8"  style="font-Size:10px;">
                     <span> <i class="bi bi-geo-alt-fill"></i> Nuku'alofa</span>
                       <span> <br>
                       <i class="bi bi-telephone-fill"></i>  (+61) 451 541 411
                       </span>
                       <span>
                         <br>
-                      <i class="bi bi-envelope-check-fill"></i> tonga@asterinnovations.com
+                      <i class="bi bi-envelope-check-fill"></i> oceania.md@asterinnovations.com
                       </span>
                     </div>
+                    <div class="col">
+                      <img width="auto" height="90" src="{% static 'assets/img/team/tum.jpg' %}">
+                    </div>
+                  </div>
+                </div>
 
                 </li> 
 

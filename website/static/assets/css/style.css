@@ -764,7 +764,7 @@ h3 {
 }
 .contact .info i {
   font-size: 20px;
-  color: #3691cf;
+  /* color: #3691cf; */
   float: left;
   width: 44px;
   height: 44px;
@@ -778,6 +778,9 @@ h3 {
   align-items: center;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
+}
+.contact .info .booth:hover{
+  color:white !important;
 }
 .contact .info h4 {
   padding: 0 0 0 60px;
@@ -817,8 +820,8 @@ h3 {
   color: #fff;
 }
 .contact .info .email:hover i,
-.contact .info .address:hover i,
-.contact .info .phone:hover i {
+.contact .info .address:hover i
+ {
   background: #3691cf;
   color: #fff;
 }
