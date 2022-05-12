@@ -13,6 +13,7 @@ urlpatterns = [
     path('cliq/',views.cliq,name='cliq'),
 
     path('privacy/',views.privacy,name='privacy'),
-    path('otp',views.otp,name='otp')
+    path('otp/',views.otp,name='otp'),
+    path('omis/',views.omis,name='omis')
 
 ]

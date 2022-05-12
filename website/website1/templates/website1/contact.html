@@ -130,7 +130,7 @@
               <button  onclick="ajax_send_otp()">Send OTP</button>
           </div> -->
          <div class="info">
-          <div id="verify_text_div"></div>
+          <div id="verify_text_div" style="display: none;"></div>
          
           <br>
           <div id="otp_div" style="display: none;" >
@@ -141,7 +141,7 @@
             <button  onclick="verify_otp()">Verify</button>
         </div>
               <form
-              action=""
+              action="."
                 method="POST"
                 name="contact-form"
                 class="contact-form"
@@ -149,13 +149,14 @@
                 id="email_div"
                 style="display: block;"
                 class="info"
+                onsubmit="return validateForm()"
                
               >
               {% csrf_token %}
               
               
-                <div class="row">
-                  <div class="form-group col-md-6" >
+                
+                  <div class="form-group col-md-12" >
                     <label for="name">Your Name</label>
                     <input
                       type="text"
@@ -166,19 +167,11 @@
                       required
                     />
                   </div>
-                  <div class="form-group col-md-6 mt-3 mt-md-0">
-                    <label for="name">Your Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email"
-                      placeholder="Your Email"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="form-group mt-3">
+                  
+                
+                <br>
+                
+                <div class="form-group col-md-12">
                   <label for="name">Subject</label>
                   <input
                     type="text"
@@ -189,21 +182,126 @@
                     required
                   />
                 </div>
+                <br>
                 <div class="form-group mt-3">
                   <label for="name">Message</label>
                   <textarea
                     class="form-control"
                     name="message"
+                    id="message"
                     rows="10"
                     required
                   ></textarea>
                 </div>
                 <br>
+                <div id="phone_div" class="form-group col-md-12 mt-3 mt-md-0">
+                  <label for="name">Phone Number</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="phone"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required
+                  />
+                </div>
+                <br>
                
-                <div class="text-center">
+                <div id="verify_text_div" style="display: none;"></div>
+
+
+
+                <!-- <div id="otp_div" style="display: none;"  class="container" style ='text-align:center;'>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <p>A 6 digit code was sent your phone number. Please, enter it below.</p>
+                  <div class="row">
+                <div class="'col-xl-12">
+                <form method="post">
+                    {% csrf_token %}
+            <label for="myotp">
+                <bold>OTP:</bold>
+                {{otp}}
+            </label>
+                <input name="otp" id="otp" type="text"><br><br>
+                <button type="submit" class="btn btn-primary" name="verify-otp">Verify OTP</button>
+            </form>
+            </div>
+                  </div>
+                  
+               </div>
+                  </div>
+                </div>
+              </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div id="otp_div" style="display: none;" class="container" style ='text-align:center;'>
+                  
+                  <form method="post">
+                    {% csrf_token %}
+                    <label for="phone">OTP</label>
+                    <input type="text" name="otp" id="otp">
+                    <button  onclick="verify_otp()">Verify</button>
+                    </form>
+                </div>
+                <br>
+
+                <div id="verify_text_div_email" style="display:none;"></div>
+                <div id="otp_div_email" style="display: none;" class="container" style ='text-align:center;'>
+                  
+                  <form method="post">
+                    {% csrf_token %}
+                    <label for="email">OTP</label>
+                    <input type="text" name="otp1" id="otp1">
+                    <button  onclick="verify_otp1()" name="final-verify">Verify</button>
+                    </form>
+                </div>
+                <br>
+
+                
+
+            
+                <div class="form-group col-md-12 mt-3 mt-md-0" style="display: none;" id="email-otp">
+                  <label for="name">Your Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder="Your Email"
+                    
+                   
+                  />
+                </div>
+                <br>
+               
+                <div class="text-center" id="ajax-but" style="display:block;" >
                   <!-- <button type="submit" name="contact-form" value="contact-form" >Send Message</button> -->
                  
-                  <input type="submit" value="Submit Message "  name="add_object">
+                  <input type="button" value="Submit Message " onclick="ajax_send_otp()" name="add_object">
+                  
+
+                </div>
+                <div class="text-center" style="display:none;" id="ajax-but-email">
+                  <!-- <button type="submit" name="contact-form" value="contact-form" >Send Message</button> -->
+                 
+                  <input type="button" value="Submit Message1 "    onclick="ajax_send_email_otp()" name="add_object1">
                   
 
                 </div>
@@ -233,6 +331,269 @@
       <!-- End Contact Us Section -->
     </main>
     <!-- End #main -->
+<script>
+// var token = '{{csrf_token}}';
+// var csrftoken = getCookie('csrftoken');
+var otp_from_back=""   
+var otp_from_back1=""
 
+     function ajax_send_otp(){   
+                                                                      
+        document.getElementById("email_div").style.display='none';
+        phone = document.getElementById("phone");
+        var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+        let x = document.forms["contact-form"]["name"].value;
+        let y = document.forms["contact-form"]["message"].value;
+
+        if (x == "") {
+          alert("Name must be filled out");
+          window.location.reload();
+    return false;
+  }
+  else if (y== ""){
+    alert("Message must be filled out");
+    window.location.reload();
+  }
+  else{
+    $.ajax({
+         
+        type: 'POST',
+        url : '/contact/',
+        dataType: 'text',
+     
+        contentType: 'application/x-www-form-urlencoded;charset=utf-8',
+        
+
+        data: {
+          'phone':phone.value,
+          'subject':subject.value,
+          'name':name.value,
+          'message':message.value,
+
+          'csrfmiddlewaretoken': '{{ csrf_token }}'
+         
+          
+         
+          
+        },
+      
+        success : function(data){
+          // console.log(data);
+          // console.log(status);
+        
+           debugger;
+          //  alert(data.OTP)
+           console.log(name.value)
+         
+            // console.log(json); 
+            console.log("success"); 
+          // if(data){
+          //   console.log(data.response_data)
+          // }
+          // // window.location.reload();
+      //  alert(data.response_data)
+            otp_from_back = JSON.parse(data);
+            otp_from_back = otp_from_back.OTP;
+            // alert(otp_from_back.OTP)
+
+                  // otp_from_back = data.response_data;
+                  document.getElementById("otp_div").style.display='block';
+                  document.getElementById("ajax-but").style.display='none';
+                  
+                  
+                },
+                
+               
+        error:function(){
+          debugger;
+          alert('hlsfdsfs')
+          // console.log(xhr.status + ": " + xhr.responseText);
+          
+        }
+     });
+    }
+    }
+
+
+function ajax_send_email_otp(){   
+  
+        document.getElementById("email_div").style.display='none';
+        // document.getElementById("ajax-but-email").style.display='none';
+        document.getElementById("verify_text_div").style.display='none';
+        document.getElementById("verify_text_div_email").style.display='block';
+        document.getElementById("email-otp").style.display='none';
+        document.getElementById("email").style.display='none';
+        document.getElementById("otp_div_email").style.display='block';
+        document.getElementById("ajax-but").style.display='none';
+        document.getElementById("ajax-but-email").style.display='none';
+        phone = document.getElementById("phone");
+        var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+        let x = document.forms["contact-form"]["name"].value;
+        let y = document.forms["contact-form"]["message"].value;
+        // let z = document.forms["contact-form"]["email"].value;
+        if (x == "") {
+          alert("Name must be filled out");
+          window.location.reload();
+    return false;
+  }
+  else if (y== ""){
+    alert("Message must be filled out");
+    window.location.reload();
+  }
+ 
+
+  else{
+    $.ajax({
+         
+        type: 'POST',
+        url : '/otp/',
+        dataType: 'text',
+     
+        contentType: 'application/x-www-form-urlencoded;charset=utf-8',
+        
+
+        data: {
+          'phone':phone.value,
+          'subject':subject.value,
+          'name':name.value,
+          'message':message.value,
+          'email':email.value,
+
+          'csrfmiddlewaretoken': '{{ csrf_token }}'
+         
+          
+         
+          
+        },
+      
+        success : function(data){
+          // console.log(data);
+          // console.log(status);
+        
+           debugger;
+          //  alert(data.OTP)
+          //  console.log(name.value)
+           otp_from_back1 = JSON.parse(data);
+            otp_from_back1 = otp_from_back1.OTP;
+          // //  $('#phone').val(''); // remove the value from the input
+            // console.log(json); // log the returned json to the console
+            console.log("success"); 
+            console.log(otp_from_back1)
+          // if(data){
+          //   console.log(data.response_data)
+          // }
+          // // window.location.reload();
+      //  alert(data.response_data)
+            // otp_from_back = JSON.parse(data);
+            // otp_from_back = otp_from_back.OTP;
+            // alert(otp_from_back.OTP)
+
+                  // otp_from_back = data.response_data;
+                  document.getElementById("verify_text_div_email").style.display='block';
+                  document.getElementById("otp_div_email").style.display='block';
+                  document.getElementById("ajax-but").style.display='none';
+                  
+                },
+                
+               
+        error:function(){
+          debugger;
+          alert('hlsfdsfs')
+          // console.log(xhr.status + ": " + xhr.responseText);
+          
+        }
+     });
+    }
+    }
+
+
+
+
+    function verify_otp1(){
+      
+      var user_otp1=document.getElementById("otp1").value;
+      document.getElementById("ajax-but").style.display='none';
+      // var user_otp = user_otp.toString(2);
+      // var otp_from_back = otp_from_back.toString(2);
+      console.log('-------------------')
+      console.log(otp_from_back1)
+      console.log(user_otp1)
+      // console.log(user_otp)
+      debugger
+      if (user_otp1==otp_from_back1){
+        document.getElementById("email_div").style.display="block";
+          document.getElementById("verify_text_div_email").style.color="green";            
+          document.getElementById("verify_text_div_email").innerHTML="Email OTP Verified";
+          document.getElementById("otp_div_email").style.display="none";
+       
+          
+          // document.getElementById("email-otp").style.display = "block";
+          // document.getElementById("form_div").style.display="block";
+         
+          document.getElementById("email-otp").style.display = "block";
+
+          // document.getElementById("ajax-but-email").style.display='block';
+      }
+      else{
+         document.getElementById("verify_text_div_email").style.display="block";
+          document.getElementById("verify_text_div_email").style.color="red";
+          document.getElementById("verify_text_div_email").innerHTML="Try again. Your Email OTP is invalid";
+      }
+  } 
+
+
+
+
+
+
+
+
+
+  
+    function verify_otp(){
+      
+        var user_otp=document.getElementById("otp").value;
+        // var user_otp = user_otp.toString(2);
+        // var otp_from_back = otp_from_back.toString(2);
+        console.log('-------------------')
+        console.log(otp_from_back)
+        console.log(user_otp)
+        debugger
+        if (user_otp==otp_from_back){
+           document.getElementById("verify_text_div").style.display="block";
+            document.getElementById("verify_text_div").style.color="green";            
+            document.getElementById("verify_text_div").innerHTML="Phone OTP Verified";
+            document.getElementById("otp_div").style.display="none";
+            // document.getElementById("form_div").style.display="block";
+            document.getElementById("email_div").style.display="block";
+            document.getElementById("email-otp").style.display = "block";
+            document.getElementById("ajax-but-email").style.display='block';
+        }
+        else{
+           document.getElementById("verify_text_div").style.display="block";
+            document.getElementById("verify_text_div").style.color="red";
+            document.getElementById("verify_text_div").innerHTML="Try again. Your Phone OTP is invalid";
+        }
+    } 
+
+    function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+              const cookie = cookies[i].trim();
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+}
+
+
+
+</script>
     
 {% endblock %}

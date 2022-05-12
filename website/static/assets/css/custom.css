@@ -278,11 +278,12 @@ a#next_page_button {
   height: 334px;
 }
 .contact-form .form-control {
-  border: 1px solid #0077b5;
+  border: none;
   color: #032f60;
 }
 .contact-form .form-control::placeholder {
   color: rgba(3, 47, 96, 0.7);
+  
 }
 .AsterSidenav {
   height: 100%;
@@ -598,7 +599,7 @@ a#next_page_button {
   color: #508f5e;
 }
 .client {
-  width: 100%;
+  width: 30%;
   height: 100%;
   /* background: linear-gradient(180deg, #3691CF 0%, #0E4D9A 100%); */
 }
@@ -663,6 +664,7 @@ a#next_page_button {
 .carousel-control-next,
 .carousel-control-prev {
   top: 88%;
+  opacity: 1 !important;
 }
 .carousel-control-next {
   left: 52%;
@@ -955,11 +957,16 @@ a#next_page_button {
 }
 
 
-.contact-form  input[type="submit"] {
+.contact-form  input[type=button] {
   background: #3691cf;
   border: 0;
   padding: 10px 24px;
   color: #fff;
   transition: 0.4s;
   border-radius: 4px;
+}
+
+
+.contact-form textarea:focus{
+  box-shadow: 0px 4px 4px rgb(26 105 146 / 10%), inset 4px 1px 4px rgb(26 105 146 / 20%);
 }

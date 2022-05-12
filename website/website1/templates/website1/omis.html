@@ -1,0 +1,108 @@
+
+   
+   {% extends 'website1/index.html' %}
+   {% load static %}
+   {% block header %}
+   <nav id="header" class="container-fluid navbar navbar-expand-lg">
+    <div class="container">
+      <a class=" logo p-0" href="index.html">
+        <img  src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"/>
+      </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+  
+        
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'about' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'services' %}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'team' %}">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'contacts' %}">Contact Us</a>
+          </li>
+   
+      </div>
+    </div>
+  </nav>
+  
+  {% endblock %}
+
+
+
+  {% block content %}
+
+    <!-- ======About Us Section Start  -->
+
+    <section id="" class="about section1bg d-flex align-items-center pb-3">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-7 d-flex flex-column justify-content-center">
+            <br>
+            <h1 data-aos="fade-up">Operations Management Information System (OMIS)</h1>
+            <div data-aos="fade-up">
+              <img
+                src="{% static 'assets/img/frontomis.png' %}"
+                alt="CLiQ Logo"
+                style="width: 200px"
+              />
+            </div>
+
+            <p data-aos="fade-up">
+                A-Z digital computerization of all divisions and departments' business processes, such as all business transactions and financial tracking with documents repository and auto email/reminder alerts, multi-locations, multi-users, and multi-currency level transaction repositories, employee-customer-supplier mobile apps and web apps portals, statutory and advance analytical reports, in-office and out-of-office digital approvals, GPS-based mobile app and CRM, directors dashboards, integrating with existing business software and other electronic devices, meeting and action items tracking, workshop jobs and project management.
+
+            </p>
+            <p data-aos="fade-up" data-aos-delay="250">
+                OMIS ERP MIS software suite is modular-based to select and use. It could be deployed in private or public cloud space with or without the ESCROW option. OMIS has the most flexible payment plans and schemes to meet not only the budget but also the customization and localization options.
+            </p>
+          </div>
+          <!-- <div class="col-lg-5" style="display: flex">
+            <img
+              src="assets/img/cliqimg.svg"
+              class="img-fluid"
+              alt=""
+              data-aos="zoom-in"
+            />
+          </div>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-12 d-flex flex-column justify-content-center">
+            <h4 data-aos="fade-up">Who are CLiQtans and CLiQ’ed partners?</h4>
+
+            <p data-aos="fade-up">
+              All the signed-up user in our app are called “CLiQtans”. Whenever
+              our CLiQtan find their true love and decide to lock themselves in
+              a private chat room isolating them from other, those CLiQtans we
+              call them loyal “CLiQ’ed partners”. Anytime the CLiQ’ed partners
+              simply can disengage and look for another CLiQtan.
+            </p>
+          </div>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-12 d-flex flex-column justify-content-center">
+            <h4 data-aos="fade-up">How Does CLiQ Works?</h4>
+
+            <p data-aos="fade-up">
+              We believe true love can be found if the CLiQtans are compatible.
+              This is the main reason we have created another aster public app
+              with algorithm that will find the most compatible CLiQtan based on
+              the information and preferences that you have set.
+            </p>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+
+    {% endblock %}
+
+   

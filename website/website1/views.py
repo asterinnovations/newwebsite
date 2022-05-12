@@ -14,6 +14,10 @@ from email.mime.image import MIMEImage
 from email.mime.image import MIMEImage
 from functools import lru_cache
 from django.contrib.staticfiles import finders
+from django.views.decorators.csrf import csrf_protect
+import requests
+
+
 def home(request):
     if request.method == "POST":    
  
@@ -70,6 +74,7 @@ def about(request):
 
 
 
+@csrf_exempt
 
 def contact(request):
    
@@ -90,37 +95,50 @@ def contact(request):
         messages.success(request, 'You\'re subscribed to aster newsletter.')
     
     
-    if  'add_object' in request.POST:
+    if  request.method == 'POST': 
         # name = request.POST['name']
         # print(name)
         print("ok")
-  
+        # ?\response_data = {}
         name = request.POST.get('name')
-        email = request.POST['email']
-        subject = request.POST['subject']
-        message = request.POST['message']
-        print(email)
+        # email = request.POST['email']
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        phone = request.POST.get('phone')
+        response_data = {}
+        
+        # print(email)
         digits = "0123456789"
         OTP = ""
         for i in range(6) :
             OTP += digits[math.floor(random.random() * 10)]
-         
+        r = requests.post(
+            "http://api.sparrowsms.com/v2/sms/",
+            data={'token' : 'v2_Y5PTVCn5MJBm2On44pBKuQaK7of.9Gjr',
+                  'from'  : 'InfoAlert',
+                  'to'    : phone,
+                  'text'  : 'Aster Website OTP Code: ' +OTP})
+
+        status_code = r.status_code
+        response = r.text
+        response_json = r.json()
+        # response_data['data'] = OTP
         
 
 
         # email=request.GET.get   ("email")
         # print(email)
         o=OTP
-        subject, from_email, to = 'Message From Aster Website', email, settings.EMAIL_HOST_USER
-        text_content = 'This is an important message.'
-        html_content = o + ' is your one time password (OTP). Please, enter the OTP to proceed. Thank you, Aster Innovation Pvt. Ltd.'
+        # subject, from_email, to = 'Message From Aster Website', email, settings.EMAIL_HOST_USER
+        # text_content = 'This is an important message.'
+        # html_content = o + ' is your one time password (OTP). Please, enter the OTP to proceed. Thank you, Aster Innovation Pvt. Ltd.'
        
-        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
+        # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        # msg.attach_alternative(html_content, "text/html")
+        # msg.send()
 
-        # send_mail('OTP request',o,settings.EMAIL_HOST_USER,[email], fail_silently=False, html_message=htmlgen)
-        print(o)
+        # # send_mail('OTP request',o,settings.EMAIL_HOST_USER,[email], fail_silently=False, html_message=htmlgen)
+        # print(o)
       
         # data = {'o':o}
         # print(data)
@@ -132,10 +150,26 @@ def contact(request):
 
         request.session['selected_message'] = message
 
-        request.session['selected_email'] = email
+        # request.session['selected_email'] = email
         request.session['selected_otp'] = o
+        request.session['selected_phone'] = phone
+        response_data['OTP'] = OTP
+        print(response_data)
+        print('--------------done-------------------')
         # return render(request,'website1/otp.html')
-        return redirect('otp')
+        # return redirect('otp')
+        return HttpResponse(
+            json.dumps(response_data),
+            content_type="application/json"
+        )
+   
+      
+
+   
+
+
+       
+
 
         # return redirect('/contact')
         
@@ -234,6 +268,9 @@ def cliq(request):
     return render(request,'website1/cliq.html')
 
 
+def omis(request):
+    return render(request,'website1/omis.html')
+
 def privacy(request):
     if request.method == "POST":    
  
@@ -255,69 +292,95 @@ def privacy(request):
     
     return render(request,'website1/privacy.html')
 
-
+@csrf_exempt
 def otp(request):
-    selected_name = request.session.get('selected_name')
-    selected_subject = request.session.get('selected_subject')
-    selected_message = request.session.get('selected_message')
-    selected_email = request.session.get('selected_email')
+    # selected_name = request.session.get('selected_name')
+    # selected_subject = request.session.get('selected_subject')
+    # selected_message = request.session.get('selected_message')
+    # selected_email = request.session.get('selected_email')
+    # selected_phone = request.session.get('selected_phone')
 
-    selected_otp = request.session.get('selected_otp')
-    print('--------------')
-    print(selected_email)
-    print(selected_message)
-    print(selected_name)
-    print(selected_otp)
-    print('-------------------')
+    # selected_otp = request.session.get('selected_otp')
+    # print('--------------')
+    # print(selected_email)
+    # print(selected_message)
+    # print(selected_name)
+    # print(selected_otp)
+    # print('-------------------')
 
-    if 'verify-otp' in request.POST:
-        otp = request.POST.get('otp')
-        print(otp)
-        otp=str(otp)
-        selected_otp=str(selected_otp)
-        print(selected_otp)
-        if selected_otp == otp:
-            print('##########')
-            print(selected_name)
-            print(selected_otp)
+    if request.method ==  'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        phone = request.POST.get('phone')
 
-            subject, from_email, to = 'Message From Aster Website', selected_email, settings.EMAIL_HOST_USER
-            text_content = 'This is an important message.'
-            # html_content = '<p> You\'ve a message. Following is the detail</p> <table border="2"> <tr> <th>Name</th> <th>Email</th> <th>Subject</th> <th>Message</th> </tr> <tr> <td>'+name+ '</td> <td> ' + email + '</td> <td> ' +subject+'</td> <td>' + message+'</td>'
-            html_content = '''
-            <img src="cid:logo.png" width="auto" height="150" style="padding-left:500px"/>
-            <p>You've got a message from the website. Look at below for the further details</p>
+        print(email)
+        response_data = {}
+        
+        digits = "0123456789"
+        OTP = ""
+        for i in range(6) :
+            OTP += digits[math.floor(random.random() * 10)]
+        subject, from_email, to = 'Message From Aster Website',settings.EMAIL_HOST_USER , email
+        text_content = 'This is an important message.'
+        html_content = OTP + ' is your one time password (OTP). Please, enter the OTP to proceed. Thank you, Aster Innovation Pvt. Ltd.'
+       
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+        response_data['OTP'] = OTP
+        print('----------------last---------------------')
+     
+        return HttpResponse(
+            json.dumps(response_data),
+            content_type="application/json"
+        )
+
+        # send_mail('OTP request',o,settings.EMAIL_HOST_USER,[email], fail_silently=False, html_message=htmlgen)
+       
+#         if selected_otp == otp:
+#             print('##########')
+#             print(selected_name)
+#             print(selected_otp)
+
+#             subject, from_email, to = 'Message From Aster Website', selected_email, settings.EMAIL_HOST_USER
+#             text_content = 'This is an important message.'
+#             # html_content = '<p> You\'ve a message. Following is the detail</p> <table border="2"> <tr> <th>Name</th> <th>Email</th> <th>Subject</th> <th>Message</th> </tr> <tr> <td>'+name+ '</td> <td> ' + email + '</td> <td> ' +subject+'</td> <td>' + message+'</td>'
+#             html_content = '''
+#             <img src="cid:logo.png" width="auto" height="150" style="padding-left:500px"/>
+#             <p>You've got a message from the website. Look at below for the further details</p>
             
                     
-            <table  align="center" width="100%">    
-    <tr>
-      <th>Name</th> <td >'''+ selected_name+'''</td>
-      <hr>
-    </tr>
-   <tr>
-     <th>Email</th> <td>'''+ selected_email+'''</td>
-     <hr>
-    </tr>
-     <tr>
-      <th>Subject</th> <td>'''+ selected_subject+'''</td>
-    </tr>
-     <tr>
-      <th>Message</th> <td>'''+ selected_message+'''</td>
-    </tr>
-    </table>
+#             <table  align="center" width="100%">    
+#     <tr>
+#       <th>Name</th> <td >'''+ selected_name+'''</td>
+#       <hr>
+#     </tr>
+#    <tr>
+#      <th>Email</th> <td>'''+ selected_email+'''</td>
+#      <hr>
+#     </tr>
+#      <tr>
+#       <th>Subject</th> <td>'''+ selected_subject+'''</td>
+#     </tr>
+#      <tr>
+#       <th>Message</th> <td>'''+ selected_message+'''</td>
+#     </tr>
+#     </table>
 
-            '''
-            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-            msg.mixed_subtype = 'related'
-            msg.attach_alternative(html_content, "text/html")
-            img_dir = 'static/assets/img'
-            image = 'logo.png'
-            file_path = os.path.join(img_dir, image)
-            with open(file_path, 'rb') as f:
-                img = MIMEImage(f.read())
-                img.add_header('Content-ID', '<{name}>'.format(name=image))
-                img.add_header('Content-Disposition', 'inline', filename=image)
-            msg.attach(img)
+#             '''
+#             msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+#             msg.mixed_subtype = 'related'
+#             msg.attach_alternative(html_content, "text/html")
+#             img_dir = 'static/assets/img'
+#             image = 'logo.png'
+#             file_path = os.path.join(img_dir, image)
+#             with open(file_path, 'rb') as f:
+#                 img = MIMEImage(f.read())
+#                 img.add_header('Content-ID', '<{name}>'.format(name=image))
+#                 img.add_header('Content-Disposition', 'inline', filename=image)
+#             msg.attach(img)
            
 
            
@@ -329,10 +392,10 @@ def otp(request):
             #     banner_image.add_header('Content-ID', '<blogsImage.svg>')
             #     msg.attach(banner_image)
             # msg.send()
-            msg.attach_alternative(html_content, "text/html")
-            msg.send()
+            # msg.attach_alternative(html_content, "text/html")
+            # msg.send()
 
-            msg.send(fail_silently=False)
+            # msg.send(fail_silently=False)
 
             # send_mail(
             #     'From : '+ selected_email+'/ : '+ selected_subject,#subject
@@ -341,12 +404,12 @@ def otp(request):
             #     selected_email,
             #         ['sabinkatwalof@gmail.com'],
             #     )
-            messages.success(request,'Your message has been sent sucessfully.')
-            return redirect('contacts')
-        elif selected_otp != otp:
+        #     messages.success(request,'Your message has been sent sucessfully.')
+        #     return redirect('contacts')
+        # elif selected_otp != otp:
 
-            messages.error(request,'Your otp is not correct. Please, type the correct OTP code.')
-            return redirect('otp')
+        #     messages.error(request,'Your otp is not correct. Please, type the correct OTP code.')
+        #     return redirect('otp')
     return render(request,'website1/otp.html')
 
 def generateOTP() :

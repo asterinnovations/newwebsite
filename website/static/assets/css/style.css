@@ -641,6 +641,7 @@ h3 {
 .product-section-container .icon-box .title a {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  /* text-transform: capitalize; */
 }
 .product1 {
   display: none !important;
@@ -717,7 +718,7 @@ h3 {
 --------------------------------------------------------------*/
 .client-bg {
   /* background-color: rgba(54, 145, 207, 0.1); */
-  padding: 40px 0;
+  padding: 30px 0;
 }
 .clients .clients-slider .swiper-slide img {
   opacity: 0.5;
@@ -749,6 +750,11 @@ h3 {
   text-align: center;
   text-transform: capitalize;
   color: #0e4d9a;
+}
+
+.clients .clients-slider .swiper-slide a img{
+  width: 200px;
+  height: auto;
 }
 /*--------------------------------------------------------------
 # Contact Us
@@ -881,17 +887,22 @@ h3 {
 }
 .contact .php-email-form input {
   height: 44px;
+  box-shadow: 0px 4px 4px rgb(26 105 146 / 10%), inset 4px 1px 4px rgb(26 105 146 / 20%);
+  border: none;
 }
 .contact .php-email-form textarea {
   padding: 10px 12px;
+  box-shadow: 0px 4px 4px rgb(26 105 146 / 10%), inset 4px 1px 4px rgb(26 105 146 / 20%);
+  border: none;
 }
 .contact .php-email-form button[type="submit"] {
-  background: #3691cf;
+  background: #00B4F5;
   border: 0;
-  padding: 10px 24px;
+  padding: 15px 24px;
   color: #fff;
   transition: 0.4s;
-  border-radius: 4px;
+  border-radius: 16px;
+  box-shadow: 0px 10px 20px rgb(187 205 224 / 30%), inset 4px 4px 8px rgb(0 0 0 / 25%), inset -8px -8px 12px rgb(0 0 0 / 25%);
 }
 .contact .php-email-form button[type="submit"]:hover {
   background: #3691cf;
@@ -911,6 +922,47 @@ h3 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.contact input[type="button"] {
+    background: #00B4F5;
+    border: 0;
+    /* border: none; */
+    padding: 15px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 16px;
+    box-shadow: 0px 10px 20px rgb(187 205 224 / 30%), inset 4px 4px 8px rgb(0 0 0 / 25%), inset -8px -8px 12px rgb(0 0 0 / 25%);
+    transform: scale(0.8);
+}
+.contact input:focus{
+  box-shadow:0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+.contact 
+.contact textarea:focus{
+  box-shadow:0 0 0 0.25rem rgb(13 110 253 / 25%);
+  border-radius: 14px;
+}
+.contact .form-group label{
+  padding-bottom: 10px;
+}
+.contact-form input{
+  height: 44px;
+  box-shadow: 0px 4px 4px rgb(26 105 146 / 10%), inset 4px 1px 4px rgb(26 105 146 / 20%);
+  border: none;
+  border-radius: 14px;
+}
+
+.contact-form textarea {
+  padding: 10px 12px;
+  box-shadow: 0px 4px 4px rgb(26 105 146 / 10%), inset 4px 1px 4px rgb(26 105 146 / 20%);
+  border: none;
+  border-radius:14px;
+}
+
+
+.contact input[type="submit"]:focus {
+  transform: scale(0.8);
 }
 /*--------------------------------------------------------------
 # Footer
@@ -1092,3 +1144,15 @@ h3 {
 }
 
 /* custom css */
+.contact-form  input[type=button] {
+  background: #3691cf;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.services .description{
+  font-size: 12px !important;
+}
