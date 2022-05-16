@@ -225,11 +225,12 @@
                       style="padding-top: 30px"
                       data-aos="fade-up"
                       data-aos-delay="100"
+                      
                     >
                       Professional Software Solutions & Products For Private
                       Sector, Government and Non-Government Enterprises.
                     </p>
-                    <p   class="details1" data-aos="fade-up" data-aos-delay="100">
+                    <p   class="details1" data-aos="fade-up" data-aos-delay="100" >
                       "We are a 3-generations team of highly passionate and innovative specialists having 5 to 35 years global experience in the respective business domains and multiple industries. Our global team of Asterians are now fully geared to plan, architect integrated complex financial software products and multi-tenant platforms, develop any digital solutions with API technologies, carry out software quality assurance testing and project management methodologies, and provide continuous support for all our valued client/tenants.
                     </p>
                     <!-- <p class="details"data-aos="fade-up" data-aos-delay="100"> We as a Global group of
@@ -2349,7 +2350,7 @@
 
                     </div>
                     <p
-                      style="padding-top: 30px"
+                      style="padding-top: 30px;"
                       data-aos="fade-up"
                       data-aos-delay="100"
                     >
@@ -2361,6 +2362,7 @@
                     </p>
 
                     <div>
+
                       <a href="{% url 'cliq' %}" class="btn-get-started" data-aos="fade-up"
                         >Read More
                        </a>
@@ -2392,17 +2394,18 @@
                       data-aos="zoom-in"
                     /></h2>
                    
-                    <p
-                      style="padding-top: 30px"
+                    <span
+                      style="padding-top: 30px;"
                       data-aos="fade-up"
                       data-aos-delay="100"
+                      
                     >
                     Over 35+ Software Modules for each Department to automate all its activities from the front security gate up to the Reception, Departmental level and Branch level Office Operation.
-                    </p>
-                    <p data-aos="fade-up" data-aos-delay="100">
+                    </span>
+                    <!-- <p data-aos="fade-up" data-aos-delay="100">
                       Connecting Your Employees, Customers, Suppliers, Banks and Government Platforms through API
 
-                    </p>
+                    </p> -->
                     <div>
                       <a
                         href="{% url 'omis' %}"
@@ -4358,7 +4361,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
               <div class="swiper-slide">
                 <a href="https://alphabeticalit.com/" target="_blank" rel="noopener noreferrer">
                 <img
-                  src="{% static 'assets/img/clients/client-3.png' %}" width="200" height="auto"
+                  src="{% static 'assets/img/clients/client-3.png' %}" width="100" height="auto"
                   class="img-fluid"
                   alt=""
                 />
@@ -4808,8 +4811,9 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
 
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>NEWSLETTER</h4>
-              <form method = "post" action="" class="form" name="newsletter">
+              <form method = "POST" action="" class="form" name="newsletter">
                 {% csrf_token %}
+                
                 <div class="input-group mb-2 mr-sm-2">
                   <span> 
                     <i class="fa fa-envelope text-white" aria-hidden="true"></i>
