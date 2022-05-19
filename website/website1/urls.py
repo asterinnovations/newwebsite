@@ -14,6 +14,7 @@ urlpatterns = [
 
     path('privacy/',views.privacy,name='privacy'),
     path('otp/',views.otp,name='otp'),
-    path('omis/',views.omis,name='omis')
+    path('omis/',views.omis,name='omis'),
+    path('gallery/',views.gallery,name='gallery')
 
 ]

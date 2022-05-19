@@ -284,6 +284,10 @@ def cliq(request):
 def omis(request):
     return render(request,'website1/omis.html')
 
+def gallery(request):
+    return render(request,'website1/gallery.html')
+
+
 def privacy(request):
     if request.method == "POST":    
  
