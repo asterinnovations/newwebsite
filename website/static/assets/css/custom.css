@@ -97,7 +97,7 @@
   color: #13386a;
 }
 .book_wrapper img {
-  height: 120px;
+  height: 82px;
   padding: 4px;
   border: 1px solid #e6e3c2;
   object-fit: contain;
@@ -1168,4 +1168,12 @@ border-radius: 14px;
 .portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
   inset: auto 10px 0 10px;
+}
+
+
+.astertooltiptext .col img{
+  height:75px;
+  width: 75px;
+  object-fit: contain;
+  border-radius: 15px;
 }

@@ -307,6 +307,7 @@
                     <input type="text" name="otp" id="otp">
                     <button  onclick="verify_otp()">Verify</button>
                     <div id="verify_text_div" style="display: none;"></div>
+                    <input type="button" value="Resend " onclick="ajax_send_otp()" name="add_object" id = 'ajax-final' style="display:none;" >
                     </div>
                     </form>
                 </div>
@@ -319,8 +320,10 @@
                     {% csrf_token %}
                     <label for="email">OTP</label>
                     <input type="text" name="otp1" id="otp1">
-                    <button  onclick="verify_otp1()" name="final-verify">Verify</button>
+                    <button  onclick="verify_otp1()" name="final-verify">Verify</button><br>
+                    <!-- <input type="button" value="Resend" onclick="ajax_send_otp()" name="add_object" id = 'ajax-final'  > -->
                     </form>
+                   
                 </div>
                 <br>
 
@@ -350,12 +353,14 @@
                     
                    
                   />
+                   <input type="button" value="Submit Message " onclick="ajax_send_otp()" name="add_object" id = 'ajax-final'  >
                 </div>
                 <br>
                 <div class="text-center" style="display:none;" id="ajax-but-email">
                   <!-- <button type="submit" name="contact-form" value="contact-form" >Send Message</button> -->
                  
                   <input  style= 'background: #00B4F5;
+                  outline: none;
                   border: 0;
                   /* border: none; */
                   padding: 15px 24px;
@@ -702,6 +707,7 @@ var otp_from_back1=""
             document.getElementById("verify_text_div").style.color="green";            
             document.getElementById("verify_text_div").innerHTML="Phone OTP Verified";
             document.getElementById("otp_div").style.display="none";
+            // document.getElementById('ajax-final').style.display="block";
             // document.getElementById("form_div").style.display="block";
             document.getElementById("email_div").style.display="none";
             document.getElementById("email-otp").style.display = "block";

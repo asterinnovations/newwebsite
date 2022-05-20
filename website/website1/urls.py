@@ -11,6 +11,8 @@ urlpatterns = [
     path('team/',views.team,name='team'),
     path('terms/',views.terms,name='terms'),
     path('cliq/',views.cliq,name='cliq'),
+    path('products/',views.products,name='products'),
+    path('calendar/',views.calendar,name='calendar'),
 
     path('privacy/',views.privacy,name='privacy'),
     path('otp/',views.otp,name='otp'),

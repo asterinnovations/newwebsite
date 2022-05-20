@@ -1,0 +1,497 @@
+{% extends 'website1/index.html' %}
+{% load static %}
+
+{% block header %}
+<nav id="header" class="container-fluid navbar navbar-expand-lg">
+  <div class="container">
+    <a class=" logo p-0" href="/">
+      <img  src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"/>
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/">Home</a>
+        </li>
+
+      
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'team' %}">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'contacts' %}">Contact Us</a>
+        </li>
+ 
+    </div>
+  </div>
+</nav>
+
+{% endblock %}
+  {% block content %}
+  <br>
+  <br>
+  <br>
+  {% if messages %}
+  {% for message in messages %}
+ 
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+<br>
+<br>
+<div class="container">
+  <div class="row justify-content-md-center">
+
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button><br><br>
+  
+  <p>{{message}}</p>
+  
+</div>
+  </div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+    <!-- ======Services Section Start  -->
+<main id="main" class="overflow-hidden">
+  
+    <section id="product" class="product-section-container services section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="row p-5">
+                <div class="col-lg-6 col-sm-12 product-heading">
+                  <p id="hover-product"><span>Our Products</span></p>
+                  <h2 class="">Our professionals Services &</h2>
+                  <h2><span>Industrial Digital-Age  Solutions</span></h2>
+                </div>
+                <div class="col-lg-6 col-sm-12 product-side-description">
+                  <p>
+                    Aster will always follow the technology industry quality standards and methodologies in designing, developing, implementing, and supporting your customized software requirements to streamline the operations, reporting, and resource tracking, and thereby monitor all activities and financials using real-time and just-in-time reports Directors’ Dashboards and GPS-enabled Mobile Apps.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="icon-box">
+                      <div class=""><img src="{% static 'assets/img/p1.png' %}" alt="" /></div>
+                      <h4 class="title">
+                        <a href=""
+                          >Administration Management Information System</a
+                        >
+                      </h4>
+                      <p class="description">
+                        ADMIS-Administration Department of the organization has
+                        many internal services to be executed for the
+                        stakeholders of the organization.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div>
+                      <h4 class="title">
+                        <a href=""
+                          >Administration Management information System</a>
+                      </h4>
+                      <p class="description">
+                        
+                        The Administration Department of any organization has many functions to be planned, executed, monitored, tracked, reported and analyzed. The traditional and most new ERP MIS software has failed to cover all such activities of the Administration Department. Aster introduces the ADMIS ERP MIS module which could be customised, localised and internationalized as per each customer's requirements. AD-MIS module is integrated with the Document Management, Contract Module, Procurement, Inventory, Fixed Assets & Maintenance, HR Module, Petty Cash Accounting, Factory Module, Sales Module, and Transport & Maintenance Module.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+                       <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch product1 "
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/p1.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">Administration Management information System</a>
+                </h4>
+                <p class="description">
+                   ADMIS-Administration Department of the organization has
+                        many internal services to be executed for the
+                        stakeholders of the organization.
+                </p>
+              </div>
+            </div>
+
+
+
+
+
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/p10.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">MIS Software For Software Development Team</a>
+                </h4>
+                <p class="description">
+                  Aster contributes software not only to the end-users but also to the software developers. Aster AutoCoder will generate front-end coding off software designs. 
+                </p>
+              </div>
+            </div>
+            <!-- <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/p3.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">Aster Digital Airline Information System</a>
+                </h4>
+                <p class="description">
+                  dAIS- A digital solutions for the Domestic Airlines to publish
+                  all its Internal and External Information to the Employees,
+                  Management, Investors, Passengers, Suppliers and Public.
+                </p>
+              </div>
+            </div> -->
+
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="icon-box">
+                    <div class=""><img src="{% static 'assets/img/p2.png' %}" alt="" /></div>
+                    <h4 class="title">
+                      <a href=""
+                        >MIS Software For Primary and Secondary Financial Markets Managers</a
+                      >
+                    </h4>
+                    <p class="description">
+                      Aster Banking, Financial Services, Insurance & Capital Markets
+                    </p>
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <div>
+                    <h4 class="title">
+                      <a href=""
+                        >
+                        MIS Software For Primary and Secondary Financial Markets Managers
+                      </a>
+                    </h4>
+                    <p class="description">
+          The Banking, Financial Services, and Insurance (BFSI) are covered in the Aster Business Software Suite for firms that provide a range of financial products/services/investment, banking, and Insurance service and information.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+            
+          
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="icon-box">
+                    <div class=""><img src="{% static 'assets/img/p5.png' %}" alt="" /></div>
+                    <h4 class="title">
+                      <a href=""
+                        >Digital Media Software Tools for the Mass Media Firms</a
+                      >
+                    </h4>
+                    <p class="description">
+                      DIGITAL TV
+
+
+                    </p>
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <div>
+                    <h4 class="title">
+                      <a href=""
+                        >Digital Media Software Tools for the Mass Media Firms</a>
+                    </h4>
+                    <p class="description">
+                      Aster Digital Mass Media software suite is specific for the front-end Television and News Industry operations such as Newsroom Communication System (NRCS), Live Sports telecast with ads management, as well as back-end operation with Fixed Assets and Maintenance, Sales & CRM, Debtors and Creditors, Inventory, Contract Management, HR Management, and Program/Project Management.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+
+
+            <div
+            class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="icon-box">
+                  <div class=""><img src="{% static 'assets/img/p4.png' %}" alt="" /></div>
+                  <h4 class="title">
+                    <a href="">Digital Commerce Web-based and Smart Phone-based Trading Software For Self-Employment, Startups Firms and SMEs</a
+                    >
+                  </h4>
+                  <p class="description">
+                    Online Commerce Infrastructure for Internet based and mobile device.
+                   <div class="mx-auto" style="height: 40px;">
+                   
+                  </div>
+
+
+                  </p>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div>
+                  <h4 class="title">
+                    <a href=""
+                      >Digital Commerce Web-based and Smart Phone-based Trading Software For Self-Employment, Startups Firms and SMEs</a>
+                  </h4>
+                  <p class="description">
+                    Aster Digital eCommerce Software is an online commerce infrastructure (OCI) platform for internet-based and Smartphones-based online trading (buying, selling and delivery) application software solutions. Aster has one of the world's best state-of-the-art and uniquely designed Websites, eCommerce, Web and Mobile Software Portals, and Digital Device connectivity. Also, DeCOMM modules are technologically capable of integrating with the 3rd party financial ERP back-end and front-end application software. 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+          <div
+          class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="icon-box">
+                <div class=""><img src="{% static 'assets/img/p7.png' %}" alt="" /></div>
+                <h4 class="title">
+                  <a href=""
+                    >MIS ERP Software for the Hotels and Restaurants Managers</a
+                  >
+                </h4>
+                <p class="description">
+                  Aster eHOTEL Software Suite covers the entire Hotel Operation including the KOT, BOT, Online Ordering System, Online Booking System
+                  <div class="mx-auto" style="height: 50px;">
+                   
+                  </div>
+
+                </p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="pe-15">
+                <h4 class="title">
+                  <a href=""
+                    >MIS ERP Software for the Hotels and Restaurants Managers</a>
+                </h4>
+                <p class="description ">
+                  Aster eHOTEL Software Suite covers the entire Hotel Operation including the KOT, BOT, Online Ordering System, Online Booking System, Room Management, Housekeeping, Event Management, Website, Mobile Apps, Customer Portal, Supplier Portal, Employee Portal, Investors Portal, and integrated back-office ERP and HRM.  
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+          
+
+
+            <!-- <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/p7.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">MIS ERP Software for the Hotels and Restaurants Managers</a>
+                </h4>
+                <p class="description">
+                  Aster eHOTEL Software Suite covers the entire Hotel Operation including the KOT, BOT, Online Ordering System, Online Booking System, Room Management, Housekeeping, Event Management, Website, Mobile Apps, Customer Portal, Supplier Portal, Employee Portal, Investors Portal, and integrated back-office ERP and HRM.  
+                </p>
+              </div>
+            </div> -->
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/p6.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">Citizen Mobile & Web Apps for the Government Departments to service and update the public</a>
+                </h4>
+                <p class="description">Aster eGovApps automate the manual forms into digital forms for the Citizens to apply online for Services and monitor the status of each Request.</p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/OMIS.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href=""
+                    >Business Operations Management Information System</a
+                  >
+                </h4>
+                <p class="description">
+                  Aster OMIS is the complete back-office operations management software suite to transform the Department into paper-free digitalization.
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/p8.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">
+                    Hospital Management Information System</a
+                  >
+                </h4>
+                <p class="description">Aster eMEDIC is the complete front-desk and back-office Dispensary and hospital operations management software suite to transform the Hospital into paper-free digitalization.</p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/p9.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">
+                    Human Resources Management Information System
+                  </a>
+                </h4>
+                <p class="description">Aster HRMIS is the complete front-desk and back-office Human resource Department management software suite to transform the Hospital into paper-free digitalization.</p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/PMIS.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">
+                    Project Management Information System
+                  </a>
+                </h4>
+                <p class="description">Aster PRO-MIS is the complete Project/Program/Event Planning, Task Monitoring and Management software. </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/AgriMIS.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">
+                    Management Information System For The Agricultural Business Operation
+                  </a>
+                </h4>
+                <p class="description">Aster AgriMIS is the complete Field and production level as well as back-office Agricultural operations software suite </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="{% static 'assets/img/EDUMIS.png' %}" alt="" />
+                </div>
+                <h4 class="title">
+                  <a href="">
+                    Educational Institute Management Information System
+                  </a>
+                </h4>
+                <p class="description">Aster EduMIS is the complete Educational Institute Academic Operations and back-office non-academic financial ERP software suite with eLearning Module, Student Portal, Parent/Sponsor Portal, and Teacher Portal.
+                  </p>
+              </div>
+            </div>
+      
+          
+          </div>
+        </div>
+      </section>
+      <!-- End Product Section -->
+
+</main>
+
+
+{% endblock %}
+
+ 

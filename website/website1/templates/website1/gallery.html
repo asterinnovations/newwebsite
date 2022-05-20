@@ -2,6 +2,10 @@
 {% load static %}
 
 {% block header %}
+<style>
+
+</style>
+
 <nav id="header" class="container-fluid navbar navbar-expand-lg">
   <div class="container">
     <a class=" logo p-0" href="/">
@@ -21,10 +25,10 @@
           <a class="nav-link" aria-current="page" href="{% url 'about' %}">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="{% url 'services' %}">Services</a>
+          <a class="nav-link" aria-current="page" href="{% url 'services' %}">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'team' %}">Team</a>
+          <a class="nav-link " aria-current="page" href="{% url 'team' %}">Team</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="{% url 'contacts' %}">Contact Us</a>
@@ -54,22 +58,127 @@
     <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button><br><br>
   
   <p>{{message}}</p>
-
   
 </div>
   </div>
 {% endif %}
 {% endfor %}
 {% endif %}
+
+
+<section class="mt-5">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <p>Our Gallery</p>
+      <h2>
+        Our Memories <span style="color: #508f5e"> &</span>  Activities
+        
+      </h2>
+    </div>
+
+    
+
+  </section>
    
+  </div>
+  <div class="gallery-container">
+    <div class="full-view"></div>
+    <div class="preview-list">
+        <ul>
+            <li>
+                <input type="radio" id="tab-1" name="gallery-group">
+                <label for="tab-1">
+                    <div class="tab">
+                        <img
+                        src="{% static 'assets/img/gallery/gallery-2.jpg' %}" />
+                    </div>
+                </label>
+                <div class="content">
+                    <img
+                        src="{% static 'assets/img/gallery/gallery-2.jpg' %}" />
+                </div>
+            </li>
+            <li>
+                <input type="radio" id="tab-2" name="gallery-group">
+                <label for="tab-2">
+                    <div class="tab">
+                        <img
+                            src="{% static 'assets/img/gallery/gallery-1.jpg' %}" />
+                    </div>
+                </label>
+                <div class="content">
+                    <img
+                        src="{% static 'assets/img/gallery/gallery-1.jpg' %}" />
+                </div>
+            </li>
+            <li>
+                <input type="radio" id="tab-3" name="gallery-group">
+                <label for="tab-3">
+                    <div class="tab">
+                        <img
+                            src="{% static 'assets/img/gallery/gallery-3.jpg' %}" />
+                    </div>
+                </label>
+                <div class="content">
+                    <img
+                        src="{% static 'assets/img/gallery/gallery-3.jpg' %}" />
+                </div>
+            </li>
+            <li>
+                <input type="radio" id="tab-4" name="gallery-group" checked>
+                <label for="tab-4">
+                    <div class="tab">
+                        <img
+                            src="{% static 'assets/img/gallery/office-1.JPG' %}" />
+                    </div>
+                </label>
+                <div class="content">
+                    <img src="{% static 'assets/img/gallery/office-1.JPG' %}" />
+                </div>
+            </li>
+            <li>
+                <input type="radio" id="tab-5" name="gallery-group">
+                <label for="tab-5">
+                    <div class="tab">
+                        <img
+                            src="{% static 'assets/img/gallery/office-2.JPG' %}" />
+                    </div>
+                </label>
+                <div class="content">
+                        <img src="{% static 'assets/img/gallery/office-2.JPG' %}" />
+                    </div>
+            </li>
+            <li>
+                <input type="radio" id="tab-6" name="gallery-group">
+                <label for="tab-6">
+                    <div class="tab">
+                        <img
+                            src="{% static 'assets/img/gallery/gallery-5.jpeg' %}" />
+                    </div>
+                </label>
+                <div class="content">
+                        <img src="{% static 'assets/img/gallery/gallery-5.jpeg' %}" />
+                    </div>
+            </li>
+            <li>
+                <input type="radio" id="tab-7" name="gallery-group">
+                <label for="tab-7">
+                    <div class="tab">
+                        <img
+                            src="{% static 'assets/img/gallery/vijith.jpg' %}" />
+                    </div>
+                </label>
+                <div class="content">
+                        <img src="{% static 'assets/img/gallery/vijith.jpg' %}" />
+                    </div>
+            </li>
+        </ul>
+    </div>
+</div>
 
-    <!-- ======Gallery Section Start  -->
-    <section id="portfolio" class="portfolio" data-aos="fade-up">
+  
+ 
 
-     Section -->
+{% endblock %}
 
-   
-
-    <!-- ======team Section End  -->
-
-   {% endblock %}
+ 

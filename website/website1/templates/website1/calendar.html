@@ -1,0 +1,73 @@
+{% extends 'website1/index.html' %}
+{% load static %}
+
+{% block header %}
+<nav id="header" class="container-fluid navbar navbar-expand-lg">
+  <div class="container">
+    <a class=" logo p-0" href="/">
+      <img  src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"/>
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/">Home</a>
+        </li>
+
+      
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'team' %}">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'contacts' %}">Contact Us</a>
+        </li>
+ 
+    </div>
+  </div>
+</nav>
+
+{% endblock %}
+  {% block content %}
+  <br>
+  <br>
+  <br>
+  {% if messages %}
+  {% for message in messages %}
+ 
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+<br>
+<br>
+<div class="container">
+  <div class="row justify-content-md-center">
+
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button><br><br>
+  
+  <p>{{message}}</p>
+  
+</div>
+  </div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+    <!-- ======Services Section Start  -->
+<main id="main" class="overflow-hidden">
+    <iframe width="700" height="900" frameborder="0" scrolling="no" src="https://asteremail-my.sharepoint.com/:x:/g/personal/nepal_teamlead_asterinnovations_com/ESjIZ8lEqbROjaHgCWlBpmQB7fovmbmPJfRNAHA3oV0EfQ"></iframe>
+</main>
+
+
+{% endblock %}
+
+ 

@@ -280,6 +280,13 @@ def terms(request):
 def cliq(request):
     return render(request,'website1/cliq.html')
 
+def calendar(request):
+    return render(request,'website1/calendar.html')
+
+
+
+def products(request):
+    return render(request,'website1/products.html')
 
 def omis(request):
     return render(request,'website1/omis.html')
