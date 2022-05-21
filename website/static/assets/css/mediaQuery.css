@@ -21,13 +21,13 @@
   .carousel-control-prev {
     left: 32%;
   }
-  .product-side-description p {
+  /* .product-side-description p {
     border-left: 0;
     text-align: right;
   }
   .flip-card {
-    display: none;
-  }
+    display: block;
+  } */
   .how-we-work-side-description p {
     border-left: 0;
   }
