@@ -2,6 +2,10 @@
 {% load static %}
 
 {% block header %}
+<style>
+  
+ 
+</style>
 <nav id="header" class="container-fluid navbar navbar-expand-lg">
   <div class="container">
     <a class=" logo p-0" href="/">
@@ -17,8 +21,15 @@
         </li>
 
       
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'about' %}">About Us</a>
+        <li class="dropdown">
+          <a href="#"
+            ><span>About</span> <i class="bi bi-chevron-down"></i
+          ></a>
+          <ul>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'gallery' %}">Aster Gallery</a></li>
+            
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link " aria-current="page" href="{% url 'services' %}">Services</a>
@@ -60,12 +71,120 @@
 {% endif %}
 {% endfor %}
 {% endif %}
+<div class="mx-auto" style="height: 50px;">
+ 
+</div>
+
+<!-- <div class="mt-10 col-md-10 col-lg-10">
+  <div
+  class="row d-flex justify-content-center align-content-center mt-5 mr-5 team-heading"
+  data-aos-delay="100"
+>
+  <p>Our Calendar</p>
+  <h2 class="">
+    Aster <span> Holiday </span> Calendar
+   
+  </h2>
+</div>
+<br> -->
+
+<section class="mt-5">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <p>Our  Calendar</p>
+      <h2>
+        Aster <span style="color: #508f5e"> Holiday</span>  Calendar
+      
+      </h2>
+    </div>
+
+  
+
+  </section>
+    <div class="d-flex justify-content-center col-lg-12 calendar-country">
 
 
+      <label for="country">Choose a Country</label>&nbsp;&nbsp;
+                <select id="list" onchange="getSelectValue();">
+                      <option value="Nepal">Nepal</option>
+                        <!-- <option value="America">America</option>
+                        <option value="SriLanka">Sri Lanka</option>
+                        <option value="Tonga">Tonga</option> -->
+                </select>
+
+
+    </div>
     <!-- ======Services Section Start  -->
-<main id="main" class="overflow-hidden">
-    <iframe width="700" height="900" frameborder="0" scrolling="no" src="https://asteremail-my.sharepoint.com/:x:/g/personal/nepal_teamlead_asterinnovations_com/ESjIZ8lEqbROjaHgCWlBpmQB7fovmbmPJfRNAHA3oV0EfQ"></iframe>
+    <div class="mx-auto" style="height: 50px;">
+ 
+    </div>
+<main id="main" class="overflow-hidden d-flex justify-content-center frame-calendar" style="position:relative;" >
+  
+  <!-- <div id="tabs" hx-target="#tab-contents" _="on htmx:afterOnLoad take .selected for event.target">
+    <a hx-get="/tab1" class="selected">Tab 1</a>
+    <a hx-get="/tab2">Tab 2</a>
+    <a hx-get="/tab3">Tab 3</a>
+  </div>
+  
+  <div id="tab-contents" hx-get="/tab1" hx-trigger="load"></div>
+  <div id="tab-contents" hx-get="/tab2" hx-trigger="load"></div> -->
+ 
+ 
+  
+            <iframe width="50%" height="700" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=FFDA4E4DB9854B4E%211021&authkey=%21AM32PESWKtNkVdA&em=2&wdAllowInteractivity=False&Item='Nepal'!B1%3AC33&wdHideGridlines=True&wdInConfigurator=True&wdInConfigurator=True&edesNext=false&ejss=false" style="display:block;" id ='iframe-1'></iframe>
+            <div class='blank-div'></div>
+
+
+            <iframe width="50%" height="700" src="https://onedrive.live.com/embed?cid=FFDA4E4DB9854B4E&resid=FFDA4E4DB9854B4E%211021&authkey=AM32PESWKtNkVdA&em=2"  frameborder="0" scrolling="no" style="display:none;" id ="iframe-2"></iframe>
+            <div class='blank-div'></div>
+
+
+
+  <!-- <div id="America" style="display:block;">
+  
+    <iframe width="50%" height="700" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=FFDA4E4DB9854B4E%211021&authkey=%21AM32PESWKtNkVdA&em=2&wdAllowInteractivity=False&Item='Nepal'!B1%3AC33&wdHideGridlines=True&wdInConfigurator=True&wdInConfigurator=True&edesNext=false&ejss=false"></iframe>
+    <div class='blank-div'></div>
+
+</div> -->
+  
+  
+
 </main>
+
+
+</div>
+
+
+<script>
+
+
+  function getSelectValue(){
+    var selectedValue = document.getElementById('list').value;
+    var iframe1 = document.getElementById('iframe-1')
+      
+    if(selectedValue == 'Nepal'){
+      // iframe1.style.display = 'block';
+      var iframe1 = `<iframe width="50%" height="700" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=FFDA4E4DB9854B4E%211021&authkey=%21AM32PESWKtNkVdA&em=2&wdAllowInteractivity=False&Item='Nepal'!B1%3AC33&wdHideGridlines=True&wdInConfigurator=True&wdInConfigurator=True&edesNext=false&ejss=false" style="display:block;" id ='iframe-1'></iframe><div class='blank-div'></div>
+      
+      `
+      var main = document.getElementById('main')
+      main.innerHTML= iframe1;
+      
+
+    }
+    else if(selectedValue == 'America'){
+      
+      var iframe2 = `
+      <iframe src="https://onedrive.live.com/embed?cid=FFDA4E4DB9854B4E&resid=FFDA4E4DB9854B4E%211021&authkey=AM32PESWKtNkVdA&em=2" width="402" height="346" frameborder="0" scrolling="no"></iframe>
+      `
+      var main = document.getElementById('main')
+      main.innerHTML= iframe2;
+      
+
+    }
+  }
+</script>
+
 
 
 {% endblock %}

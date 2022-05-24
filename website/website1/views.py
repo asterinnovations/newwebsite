@@ -88,7 +88,8 @@ def contact(request):
 
   
     
-    
+    # if  request.method=='GET':
+    #     print() 
     if  request.method=='POST': 
         # name = request.POST['name']
         # print(name)
@@ -294,6 +295,96 @@ def omis(request):
 def gallery(request):
     return render(request,'website1/gallery.html')
 
+
+def investment(request):
+        if  request.method=='POST': 
+        # name = request.POST['name']
+        # print(name)
+        
+            if  'newsletter' in request.POST:
+                print('-----------')
+                email1 = request.POST['inlineFormInputGroupUsername2']
+                send_mail(
+            'Email From: ' + settings.EMAIL_HOST_USER,  # subject
+
+            'You are subscribed to Aster newsletter.' ,
+
+
+            settings.EMAIL_HOST_USER,
+            [email1, ]
+            )
+                messages.success(request, 'You\'re subscribed to aster newsletter.')
+                return render(request,'website1/home.html')
+            else:
+        # ?\response_data = {}
+                name = request.POST.get('name')
+            # email = request.POST['email']
+                subject = request.POST.get('subject')
+                message = request.POST.get('message')
+                phone = request.POST.get('phone')
+                response_data = {}
+        
+        # print(email)
+                print(name)
+                print(message)
+            if(name != None and subject != None and message != None and phone != None):
+                print('----------------Aster-------------------')
+                digits = "0123456789"
+                OTP = ""
+                for i in range(6) :
+                    OTP += digits[math.floor(random.random() * 10)]
+                r = requests.post(
+            "http://api.sparrowsms.com/v2/sms/",
+                data={'token' : 'v2_Y5PTVCn5MJBm2On44pBKuQaK7of.9Gjr',
+                  'from'  : 'InfoAlert',
+                  'to'    : phone,
+                  'text'  : 'Aster Website OTP Code: ' +OTP})
+
+                status_code = r.status_code
+                response = r.text
+                response_json = r.json()
+        # response_data['data'] = OTP
+        
+
+
+        # email=request.GET.get   ("email")
+        # print(email)
+                o=OTP
+        # subject, from_email, to = 'Message From Aster Website', email, settings.EMAIL_HOST_USER
+        # text_content = 'This is an important message.'
+        # html_content = o + ' is your one time password (OTP). Please, enter the OTP to proceed. Thank you, Aster Innovation Pvt. Ltd.'
+       
+        # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        # msg.attach_alternative(html_content, "text/html")
+        # msg.send()
+
+        # # send_mail('OTP request',o,settings.EMAIL_HOST_USER,[email], fail_silently=False, html_message=htmlgen)
+        # print(o)
+      
+        # data = {'o':o}
+        # print(data)
+        # print(data['csrfmiddlewaretoken'])
+        # return redirect('/contact')
+                request.session['selected_name'] = name
+
+                request.session['selected_subject'] = subject
+
+                request.session['selected_message'] = message
+
+        # request.session['selected_email'] = email
+                request.session['selected_otp'] = o
+                request.session['selected_phone'] = phone
+                response_data['OTP'] = OTP
+                print(response_data)
+                print('--------------done-------------------')
+        # return render(request,'website1/otp.html')
+        # return redirect('otp')
+                return HttpResponse(
+            json.dumps(response_data),
+            content_type="application/json"
+            )
+        return render(request,'website1/investment.html')
+    
 
 def privacy(request):
     if request.method == "POST":    

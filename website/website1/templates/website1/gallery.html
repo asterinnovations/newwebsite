@@ -21,8 +21,15 @@
         </li>
 
       
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'about' %}">About Us</a>
+        <li class="dropdown">
+          <a href="#"
+            ><span>About</span> <i class="bi bi-chevron-down"></i
+          ></a>
+          <ul>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'gallery' %}">Aster Gallery</a></li>
+            
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="{% url 'services' %}">Services</a>
@@ -64,7 +71,9 @@
 {% endif %}
 {% endfor %}
 {% endif %}
-
+<div class="mx-auto" style="height: 100px;">
+ 
+</div>
 
 <section class="mt-5">
   <div class="container" data-aos="fade-up">
@@ -76,109 +85,187 @@
       </h2>
     </div>
 
-    
+  
 
   </section>
    
   </div>
-  <div class="gallery-container">
-    <div class="full-view"></div>
-    <div class="preview-list">
-        <ul>
-            <li>
-                <input type="radio" id="tab-1" name="gallery-group">
-                <label for="tab-1">
-                    <div class="tab">
-                        <img
-                        src="{% static 'assets/img/gallery/gallery-2.jpg' %}" />
-                    </div>
-                </label>
-                <div class="content">
-                    <img
-                        src="{% static 'assets/img/gallery/gallery-2.jpg' %}" />
-                </div>
-            </li>
-            <li>
-                <input type="radio" id="tab-2" name="gallery-group">
-                <label for="tab-2">
-                    <div class="tab">
-                        <img
-                            src="{% static 'assets/img/gallery/gallery-1.jpg' %}" />
-                    </div>
-                </label>
-                <div class="content">
-                    <img
-                        src="{% static 'assets/img/gallery/gallery-1.jpg' %}" />
-                </div>
-            </li>
-            <li>
-                <input type="radio" id="tab-3" name="gallery-group">
-                <label for="tab-3">
-                    <div class="tab">
-                        <img
-                            src="{% static 'assets/img/gallery/gallery-3.jpg' %}" />
-                    </div>
-                </label>
-                <div class="content">
-                    <img
-                        src="{% static 'assets/img/gallery/gallery-3.jpg' %}" />
-                </div>
-            </li>
-            <li>
-                <input type="radio" id="tab-4" name="gallery-group" checked>
-                <label for="tab-4">
-                    <div class="tab">
-                        <img
-                            src="{% static 'assets/img/gallery/office-1.JPG' %}" />
-                    </div>
-                </label>
-                <div class="content">
-                    <img src="{% static 'assets/img/gallery/office-1.JPG' %}" />
-                </div>
-            </li>
-            <li>
-                <input type="radio" id="tab-5" name="gallery-group">
-                <label for="tab-5">
-                    <div class="tab">
-                        <img
-                            src="{% static 'assets/img/gallery/office-2.JPG' %}" />
-                    </div>
-                </label>
-                <div class="content">
-                        <img src="{% static 'assets/img/gallery/office-2.JPG' %}" />
-                    </div>
-            </li>
-            <li>
-                <input type="radio" id="tab-6" name="gallery-group">
-                <label for="tab-6">
-                    <div class="tab">
-                        <img
-                            src="{% static 'assets/img/gallery/gallery-5.jpeg' %}" />
-                    </div>
-                </label>
-                <div class="content">
-                        <img src="{% static 'assets/img/gallery/gallery-5.jpeg' %}" />
-                    </div>
-            </li>
-            <li>
-                <input type="radio" id="tab-7" name="gallery-group">
-                <label for="tab-7">
-                    <div class="tab">
-                        <img
-                            src="{% static 'assets/img/gallery/vijith.jpg' %}" />
-                    </div>
-                </label>
-                <div class="content">
-                        <img src="{% static 'assets/img/gallery/vijith.jpg' %}" />
-                    </div>
-            </li>
-        </ul>
-    </div>
-</div>
-
   
- 
+  
 
+<div class="gallery-section">
+  <section id="portfolio" class="portfolio section-bg">
+    <div class="container" data-aos="fade-up">
+     
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-photo" >General Photos</li>
+            <li data-filter=".filter-video">Office Photos</li>
+
+          </ul>
+        </div>
+      </div>
+      <div
+        class="row portfolio-container"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+          <div class="portfolio-wrap">
+            <img
+              src="{% static 'assets/img/gallery/vijith.JPG' %}"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-links">
+              <a
+                href="{% static 'assets/img/gallery/vijith.JPG' %}"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+                title="Aster Photo"
+                ><i class="bi bi-plus"></i
+              ></a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+          <div class="portfolio-wrap">
+            <img
+              src="{% static 'assets/img/gallery/gallery-2.jpg' %}"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-links">
+              <a
+                href="{% static 'assets/img/gallery/gallery-2.jpg' %}"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+                title=""
+                ><i class="bi bi-plus"></i
+              ></a>
+              <!-- <a href="portfolio-details.html" title="More Details"
+                ></a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+          <div class="portfolio-wrap">
+            <img
+              src="{% static 'assets/img/gallery/gallery-5.jpeg' %}"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-links">
+              <a
+                href="{% static 'assets/img/gallery/gallery-5.jpeg' %}"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+                title=""
+                ><i class="bi bi-plus"></i
+              ></a>
+              <!-- <a href="portfolio-details.html" title="More Details"
+                ></a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+          <div class="portfolio-wrap">
+            <img
+              src="{% static 'assets/img/gallery/md.jpg' %}"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-links">
+              <a
+                href="{% static 'assets/img/gallery/md.jpg' %}"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+                title=""
+                ><i class="bi bi-plus"></i
+              ></a>
+              <!-- <a href="portfolio-details.html" title="More Details"
+                ></a> -->
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-lg-4 col-md-6 portfolio-item filter-video">
+          <div class="portfolio-wrap">
+            <img
+              src="{% static 'assets/img/gallery/office-1.JPG' %}"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-links">
+              <a
+                href="{% static 'assets/img/gallery/office-1.JPG' %}"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+                title=""
+                ><i class="bi bi-plus"></i
+              ></a>
+              <!-- <a href="portfolio-details.html" title="More Details"
+                ></a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-video">
+          <div class="portfolio-wrap">
+            <img
+              src="{% static 'assets/img/gallery/office-2.JPG' %}"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-links">
+              <a
+                href="{% static 'assets/img/gallery/office-2.JPG' %}"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+                title=""
+                ><i class="bi bi-plus"></i
+              ></a>
+              <!-- <a href="portfolio-details.html" title="More Details"
+                ></a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-video">
+          <div class="portfolio-wrap">
+            <img
+              src="{% static 'assets/img/gallery/work.jpg' %}"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-links">
+              <a
+                href="{% static 'assets/img/gallery/work.jpg' %}"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+                title=""
+                ><i class="bi bi-plus"></i
+              ></a>
+              <!-- <a href="portfolio-details.html" title="More Details"
+                ></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+         <div class="row view_more">
+        <div class="col-lg-12 d-flex align-items-center justify-content-center">
+          Like what you see here? &nbsp; <a href=""> See More Activities and Photos</a>
+        </div>
+      </div>
+    </div>
+    
+  
+  </section>
+
+
+</div>
 {% endblock %}
 
  

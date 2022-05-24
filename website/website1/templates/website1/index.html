@@ -61,34 +61,6 @@
     />
     <link rel="stylesheet" href="{% static 'assets/css/gallery.css' %}">
     
-    <style>
-     .astertooltip {
-      position: relative;
-      display: inline-block;
-    }
-    .astertooltip .astertooltiptext {
-      visibility: hidden;
-      width:50%;
-      min-width: 500px;
-      
-      background: rgba(255, 255, 255, 0.45);
-      box-shadow: 0px 2px 15px rgba(26, 157, 232, 0.1);
-      backdrop-filter: blur(9px);
-      -webkit-backdrop-filter: blur(9px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #032F60;
-      border-radius: 6px;
-      padding: 10px 30px;
-      /* Position the astertooltip */
-      position: absolute;
-      z-index: 1;
-      right: -500px;
-    top: -60px;
-    }
-    .astertooltip:hover .astertooltiptext {
-      visibility: visible;
-    }
-    </style>
   </head>
  
 
@@ -134,10 +106,20 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
 
-      
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="{% url 'about' %}">About Us</a>
+        <li class="dropdown">
+          <a href="#"
+            ><span>About</span> <i class="bi bi-chevron-down"></i
+          ></a>
+          <ul>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'gallery' %}">Aster Gallery</a></li>
+           
+            
+          </ul>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'about' %}">About Us</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link " aria-current="page" href="{% url 'services' %}">Services</a>
         </li>
@@ -2595,25 +2577,7 @@
                 </p>
               </div>
             </div>
-            <!-- <div
-              class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            >
-              <div class="icon-box">
-                <div class="icon">
-                  <img src="{% static 'assets/img/p3.png' %}" alt="" />
-                </div>
-                <h4 class="title">
-                  <a href="">Aster Digital Airline Information System</a>
-                </h4>
-                <p class="description">
-                  dAIS- A digital solutions for the Domestic Airlines to publish
-                  all its Internal and External Information to the Employees,
-                  Management, Investors, Passengers, Suppliers and Public.
-                </p>
-              </div>
-            </div> -->
+           
 
             <div
               class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch"
@@ -4479,61 +4443,13 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
       <div class="footer-top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-3 col-md-6 footer-links">
+            <div class="col-lg-3 col-md-6  footer-links">
               
               <h4>OUR REGIONAL PRESENCE FOR YOUR CONVENIENCE</h4>
               <ul>
 
 
-                <!-- <li class="astertooltip">
-                  <img
-                    class=""
-                    style="margin-right: 3%"
-                    src="{% static 'assets/img/nepal-flag.png' %}"
-                    alt=""
-                  /><a href="#"><strong>Nepal</strong> <br>(Headquarters) </a>
-    <div class="astertooltiptext">
-
-    <div class ="container">
-        <div class="row">
-
-            <div class="col-9" style="font-Size:10px;">
-              <ul style="list-style:none;">
-                <ul>
-                  <li class="p-0">
-                   <b>Smita</b>
-                
-                  </li>
-                  <li class="p-0">
-                   <span>CEO / CMO</span>
-                  </li>
-                  <li>
-                    <i class="bi bi-geo-alt-fill me-2" ></i>
-                    #150/41 Thado Dhunga, Dhobighat – 3, Lalitpur – 44600, Nepal
-                  </li>
-                  <li>
-                   <i class="bi bi-telephone-fill me-2"></i>  (+977) 984 103 8989 | 985 121 0828 |  981 020 9398| 985 605 0777
-                  </li>
-                  <li>
-                   <i class="bi bi-envelope-check-fill me-2"></i>  nepal@asterinnovations.com 
-                  </li>
-                </ul>
-                
-                 
-              </ul>
-            </div>
-        <!-- </div>
-        </div> -->
-
-        <!-- <div class="col-3" >
-          <img  src="{% static 'assets/img/team/smitak.jpeg' %}" />
-        </div>
-
-        </div>
-        </div>
-        
-      </div>
-                </li> --> 
+               
 
                 <li class="astertooltip">
                   <img
@@ -4541,7 +4457,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                     style="margin-right: 3%"
                     src="{% static 'assets/img/nepal-flag.png' %}"
                     alt=""
-                  /><a href="#"><strong>Nepal</strong> <br>(Headquarters) </a>
+                  /><a><strong>Nepal</strong> <br>(Headquarters) </a>
      
                   <div class="astertooltiptext">
                     <div class="container">
@@ -4568,18 +4484,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                        </li>
                      </ul>
                       
-                      <!-- <span style="padding-Left:20px"><b>Vijitha Fernando</b><br> </span>
-                      <span style="padding-Left:20px">Deputy Chairman/COO/CPO  </span><br><br>
-                          <span> <i class="bi bi-geo-alt-fill"></i>Colombo</span><br>
-                            <span> <br>
-                            <i class="bi bi-telephone-fill"></i>  (+94) 71 4545 938 
-                            
-                          <br>
-                            </span>
-                            <span>
-                              <br>
-                            <i class="bi bi-envelope-check-fill"></i> vijitha@asterinnovations.com<br>
-                            </span> -->
+                      
                     </div>
         <div class="col">
           <img  src="{% static 'assets/img/team/smitak.jpeg' %}">
@@ -4597,7 +4502,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                     style="margin-right: 3%"
                     src="{% static 'assets/img/srilanka.png' %}"
                     alt=""
-                  /><a href="#"><strong>Sri Lanka</strong> <br>(Global Support & Solutions Center) </a>
+                  /><a><strong>Sri Lanka</strong> <br>(Global Support & Solutions Center) </a>
      
                   <div class="astertooltiptext">
                     <div class="container">
@@ -4623,18 +4528,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                        </li>
                      </ul>
                       
-                      <!-- <span style="padding-Left:20px"><b>Vijitha Fernando</b><br> </span>
-                      <span style="padding-Left:20px">Deputy Chairman/COO/CPO  </span><br><br>
-                          <span> <i class="bi bi-geo-alt-fill"></i>Colombo</span><br>
-                            <span> <br>
-                            <i class="bi bi-telephone-fill"></i>  (+94) 71 4545 938 
-                            
-                          <br>
-                            </span>
-                            <span>
-                              <br>
-                            <i class="bi bi-envelope-check-fill"></i> vijitha@asterinnovations.com<br>
-                            </span> -->
+                     
                     </div>
         <div class="col">
           <img  src="{% static 'assets/img/team/vijitha-2.png' %}">
@@ -4653,7 +4547,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                     style="margin-right: 3%"
                     src="{% static 'assets/img/us.png' %}"
                     alt=""
-                  /><a href="#"><strong>USA</strong><br> (Advanced Technology Center) </a>
+                  /><a><strong>USA</strong><br> (Advanced Technology Center) </a>
 
 
       <div class="astertooltiptext">
@@ -4749,7 +4643,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                     style="margin-right: 3%"
                     src="{% static 'assets/img/nigeria.png' %}"
                     alt=""
-                  /><a href="#"><strong>Africa</strong> <br>(Sales & Support Center) </a>
+                  /><a><strong>Africa</strong> <br>(Sales & Support Center) </a>
       <div class="astertooltiptext">
         <div class="container">
           <div class="row">
@@ -4795,7 +4689,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                     style="margin-right: 3%"
                     src="{% static 'assets/img/tonga.png' %}"
                     alt=""
-                  /><a href="#"
+                  /><a
                     ><strong>Tonga </strong><br> (Solutions, Support & Center)
                   </a>
                   <div class="astertooltiptext">
@@ -4858,7 +4752,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
 
                 <li>
                   <i class="bx bx-chevron-right"></i>
-                  <a href="{% url 'contacts' %}">For Investment Partnerships</a>
+                  <a  href="{% url 'investment' %}">For Investment Partnerships</a>
                 </li>
                
                 <li>
@@ -4866,11 +4760,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
                   <a href="{% url 'calendar' %}" >Aster Holiday Calendar</a>
 
                 </li>
-                <!-- <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="{% url 'gallery' %}" >Aster Photo Gallery</a>
-
-                </li> -->
+               
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 footer-links">
@@ -4982,13 +4872,35 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
     />
 
     <script>
-      $(document).ready(function(){
-  window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove();
+
+
+function gotoContact(){
+   $.ajax({
+        url: "/contact/",
+        type: 'GET',
+        dataType: 'text', // added data type
+       
+        success: function(data) {
+          debugger;
+          //data.month = 03
+          // alert(data)
+          // var output = data;  alert(output)
+          // alert(data)
+//           document.getElementById('name').addEventListener('change', function() {
+//   console.log('You selected: ', this.value);
+// });
+          
+         
+
+          
+        }
     });
-  }, 5000);
-  });
+  }
+
+
+
+ 
+
   </script>
 
     <!-- <script>
@@ -5091,6 +5003,7 @@ Supporting customers of the JAV IT Group in IT Infrastructure Implementation. </
     <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+    <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous" defer></script>
 
     <!-- Template Main JS File -->
     <script src="{% static 'assets/js/main.js' %}"></script>

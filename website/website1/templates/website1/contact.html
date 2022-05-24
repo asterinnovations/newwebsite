@@ -17,8 +17,15 @@
         </li>
 
       
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="{% url 'about' %}">About Us</a>
+        <li class="dropdown">
+          <a href="#"
+            ><span>About</span> <i class="bi bi-chevron-down"></i
+          ></a>
+          <ul>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'gallery' %}">Aster Gallery</a></li>
+            
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link " aria-current="page" href="{% url 'services' %}">Services</a>
@@ -74,6 +81,7 @@
               </div>
               <div class="col-lg-6 col-sm-12 product-side-description">
                 <p>
+                  {{partner}}
                   All your queries with regard to employment with us, business
                   partnerships, Seed and Angel Investment as well as Venture
                   Capital, Joint-venture, willing to be a local dealer in your
@@ -204,7 +212,7 @@
                         <option disabled selected value>Select a Subject </option>
                           <option value="I'm interested to invest in company">I'm interested to invest in company</option>
                           <option value="I'm interested to invest in a product development">I'm interested to invest in a product development.</option>
-                          <option value="I wish to be a Regional Business/Channel Partner">I wish to be a Regional Business/Channel Partner</option>
+                          <option id ='human' value="I wish to be a Regional Business/Channel Partner">I wish to be a Regional Business/Channel Partner</option>
                           <option value="I wish to be a Province Dealer in my Country">I wish to be a Province Dealer in my Country.</option>
                           <option value="I wish to promote Aster Software Products to my Clients">I wish to promote Aster Software Products to my Clients.</option>
                           <option value="I am already a Aster Customer and wish to suggest">I am already a Aster Customer and wish to suggest.</option>
@@ -214,7 +222,7 @@
                           <option value="I am a Seed Funder and wish to Invest in Aster">I am a Seed Funder and wish to Invest in Aster.</option>
                           <option value="I am an Angel Investor and wish to Invest in Aster">I am an Angel Investor and wish to Invest in Aster.</option>
                           <option value="I am looking for a Job Oppprtunity">I am looking for a Job Oppprtunity.</option>
-                          <option value=">I am delighted to offer my enterprise Digital Business Transformation to Aster Global Team">I am delighted to offer my enterprise Digital Business Transformation to Aster Global Team.</option>
+                          <option value="I am delighted to offer my enterprise Digital Business Transformation to Aster Global Team">I am delighted to offer my enterprise Digital Business Transformation to Aster Global Team.</option>
                           <option value="I want to sell my Products/Services to Aster">I want to sell my Products/Services to Aster.</option>
                           <option value="I am an Ex-Employee of Aster and needs to escalate an important information">I am an Ex-Employee of Aster and needs to escalate an important information.</option>
                           <option value="I have other purpose to contact the Aster Chairman">I have other purpose to contact the Aster Chairman</option>
@@ -307,7 +315,7 @@
                     <input type="text" name="otp" id="otp">
                     <button  onclick="verify_otp()">Verify</button>
                     <div id="verify_text_div" style="display: none;"></div>
-                    <input type="button" value="Resend " onclick="ajax_send_otp()" name="add_object" id = 'ajax-final' style="display:none;" >
+                   
                     </div>
                     </form>
                 </div>
@@ -353,7 +361,7 @@
                     
                    
                   />
-                   <input type="button" value="Submit Message " onclick="ajax_send_otp()" name="add_object" id = 'ajax-final'  >
+                   <!-- <input type="button" value="Submit Message " onclick="ajax_send_otp()" name="add_object" id = 'ajax-final'  > -->
                 </div>
                 <br>
                 <div class="text-center" style="display:none;" id="ajax-but-email">
@@ -548,7 +556,7 @@ var otp_from_back1=""
                
         error:function(){
           debugger;
-          alert('hlsfdsfs')
+          alert('error')
           // console.log(xhr.status + ": " + xhr.responseText);
           
         }
